@@ -1,6 +1,6 @@
 import React from 'react';
 
-type Section = 'about' | 'experience' | 'projects' | 'contact';
+type Section = 'about' | 'experience' | 'skills' | 'projects' | 'contact';
 
 interface NavBarProps {
   activeSection: Section;
@@ -11,6 +11,7 @@ export default function NavBar({ activeSection, onSectionChange }: NavBarProps) 
   const navItems: { id: Section; label: string }[] = [
     { id: 'about', label: 'About' },
     { id: 'experience', label: 'Experience' },
+    { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' },
   ];

@@ -5,14 +5,15 @@ import AboutMe from "@/components/AboutMe";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
 import NavBar from "@/components/NavBar";
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState<'about' | 'experience' | 'projects' | 'contact'>('about');
+  const [activeSection, setActiveSection] = useState<'about' | 'experience' | 'skills' | 'projects' | 'contact'>('about');
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'experience', 'projects', 'contact'];
+      const sections = ['about', 'experience', 'skills', 'projects', 'contact'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -23,7 +24,7 @@ export default function Home() {
       });
 
       if (currentSection) {
-        setActiveSection(currentSection as 'about' | 'experience' | 'projects' | 'contact');
+        setActiveSection(currentSection as 'about' | 'experience' | 'skills' | 'projects' | 'contact');
       }
     };
 
@@ -35,6 +36,7 @@ export default function Home() {
     <main className="w-full">
       <AboutMe />
       <Experience />
+      <Skills />
       <Projects />
       <Contact />
       <NavBar activeSection={activeSection} onSectionChange={setActiveSection} />
