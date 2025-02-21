@@ -8,16 +8,17 @@ export default function AboutMe() {
         <h3 className="font-bold mb-6">Hello I'm</h3>
         <h1 className="text-3xl sm:text-3xl font-bold mb-6">Koffison Voumadi</h1>
         <span className="text-md text-foreground/60 opacity-80">Full Stack Software Engineer</span>
+        <p className="text-sm opacity-70">📍 New York, NY</p>
 
         {/* Social Media Icons */}
         <div className="flex gap-4 mt-4">
+          <a href="https://www.linkedin.com/in/koffison-voumadi/" target="_blank" rel="noopener noreferrer"
+              className="text-2xl hover:text-blue-400 transition-colors">
+            <FaLinkedin />
+          </a>
           <a href="https://github.com/koffisonV" target="_blank" rel="noopener noreferrer" 
              className="text-2xl hover:text-gray-400 transition-colors">
             <FaGithub />
-          </a>
-          <a href="https://www.linkedin.com/in/koffison-voumadi/" target="_blank" rel="noopener noreferrer"
-             className="text-2xl hover:text-blue-400 transition-colors">
-            <FaLinkedin />
           </a>
         </div>
         {/* Add your about me content here */}
