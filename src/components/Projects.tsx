@@ -10,40 +10,40 @@ export default function Projects() {
       description: "A blockchain-based media provenance system for reporting and verifying the authenticity of media content among content delivery networks.",
       technologies: ["React native", "AWS", "Expo.js", "Tailwind CSS", "eWitness API", "Blockchain"],
       link: "https://www.vngle.com/",
-      image: "/images/vngle.jpg"
+      image: "images/vngle.jpg"
     },
     {
       title: "Rick and Morty",
       description: "An interactive web application that delves into the fantastic world of the beloved TV series, Rick and Morty—Made Possible using the Rick and Morty API.",
       technologies: ["React", "RESTful API", "Tailwind"],
       link: "https://koffisonv.github.io/rickandmortywiki/",
-      image: "/images/rickandmorty.gif"
+      image: "images/rickandmorty.gif"
     },
     {
       title: "MyVPN",
       description: "The goal of the project is to analyze network traffic through VPNs using Wireshark, to see the efficiency of different vpn protocols used in existing VPN software like NordVPN as well as a self-hosted VPN built from scratch.",
       technologies: ["OpenVPN - protocol", "EC2 server", "Shell Scripting"],
       link: "https://youtu.be/xHemKKHjR0s",
-      image: "/images/openvpn.jpg"
+      image: "images/openvpn.jpg"
     }
   ];
 
   const skills = [
-    { src: '/images/img1.png', alt: 'AWS' },
-    { src: '/images/img2.png', alt: 'Android Studio' },
-    { src: '/images/img3.png', alt: 'Docker' },
-    { src: '/images/img4.png', alt: 'Expo.js' },
-    { src: '/images/img5.png', alt: 'Git' },
-    { src: '/images/img6.png', alt: 'JAVA' },
-    { src: '/images/img7.png', alt: 'Next.js' },
-    { src: '/images/img8.png', alt: 'Node.js' },
-    { src: '/images/img9.png', alt: 'Postgres' },
-    { src: '/images/img10.png', alt: 'Python' },
-    { src: '/images/img11.png', alt: 'React' },
-    { src: '/images/img12.png', alt: 'Tailwind CSS' },
-    { src: '/images/img13.png', alt: 'VMWare' },
-    { src: '/images/img14.png', alt: 'Wordpress' },
-    { src: '/images/img15.png', alt: 'Xcode' },
+    { src: 'images/img1.png', alt: 'AWS' },
+    { src: 'images/img2.png', alt: 'Android Studio' },
+    { src: 'images/img3.png', alt: 'Docker' },
+    { src: 'images/img4.png', alt: 'Expo.js' },
+    { src: 'images/img5.png', alt: 'Git' },
+    { src: 'images/img6.png', alt: 'JAVA' },
+    { src: 'images/img7.png', alt: 'Next.js' },
+    { src: 'images/img8.png', alt: 'Node.js' },
+    { src: 'images/img9.png', alt: 'Postgres' },
+    { src: 'images/img10.png', alt: 'Python' },
+    { src: 'images/img11.png', alt: 'React' },
+    { src: 'images/img12.png', alt: 'Tailwind CSS' },
+    { src: 'images/img13.png', alt: 'VMWare' },
+    { src: 'images/img14.png', alt: 'Wordpress' },
+    { src: 'images/img15.png', alt: 'Xcode' },
   ];
 
   return (
@@ -66,6 +66,7 @@ export default function Projects() {
                   fill
                   className="object-cover"
                   priority={index === 0}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
               <div className="p-6">
@@ -101,6 +102,7 @@ export default function Projects() {
                   width={48}
                   height={48}
                   className="object-contain"
+                  sizes="48px"
                 />
                 <p className="text-xs text-center text-white mt-1">{skill.alt}</p>
               </div>

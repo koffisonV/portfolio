@@ -7,7 +7,7 @@ let basePath = '';
 
 if (isGithubActions) {
   const repo = process.env.GITHUB_REPOSITORY?.replace(/.*?\//, '');
-  assetPrefix = `/${repo}/`;
+  assetPrefix = `/${repo}`;
   basePath = `/${repo}`;
 }
 
@@ -17,8 +17,15 @@ const nextConfig: NextConfig = {
   basePath: basePath,
   images: {
     unoptimized: true,
-    path: `${assetPrefix}_next/image`
-  }
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+  },
+  // This is important for GitHub Pages
+  trailingSlash: true,
 };
 
 export default nextConfig;
