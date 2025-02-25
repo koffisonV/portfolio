@@ -5,7 +5,7 @@ export default function AboutMe() {
   return (
     <section id="about" className="min-h-screen flex items-center justify-center p-4 sm:p-8 pb-24">
       <div className="max-w-4xl w-full">
-        <h3 className="font-bold mb-6">Hello I'm</h3>
+        <h3 className="font-bold mb-6">Hello I&apos;m</h3>
         <h1 className="text-3xl sm:text-3xl font-bold mb-6">Koffison Voumadi</h1>
         <span className="text-md text-foreground/60 opacity-80">Full Stack Software Engineer</span>
         <p className="text-sm opacity-70">📍 New York, NY</p>
@@ -33,7 +33,7 @@ export default function AboutMe() {
           <div className="flex-1 p-4 sm:p-6 rounded-lg bg-foreground/5 bg-stone-800/30">
             <h3 className="text-lg sm:text-xl font-semibold mb-3">Education</h3>
             <p className="text-sm sm:text-base text-foreground/70">
-              Bachelor's of Science in Computer Science from John Jay College. Professional certificates in: <br/> Agile Framework&mdash;LinkedIn Learning.<br/>IT Support Specialist&mdash;IBM.
+              Bachelor&apos;s of Science in Computer Science from John Jay College. Professional certificates in: <br/> Agile Framework&mdash;LinkedIn Learning.<br/>IT Support Specialist&mdash;IBM.
             </p>
           </div>
 
