@@ -9,7 +9,7 @@ export default function Projects() {
       title: "Vngle Reporter",
       description: "A blockchain-based media provenance system for reporting and verifying the authenticity of media content among content delivery networks.",
       technologies: ["React native", "AWS", "Expo.js", "Tailwind CSS", "eWitness API", "Blockchain"],
-      link: "https://harvardpublichealth.org/policy-practice/for-many-immigrants-u-s-health-care-is-a-maze-without-a-map/",
+      link: "https://www.vngle.com/",
       image: "/images/vngle.jpg"
     },
     {
