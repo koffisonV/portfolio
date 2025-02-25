@@ -33,7 +33,7 @@ export default function AboutMe() {
           <div className="flex-1 p-4 sm:p-6 rounded-lg bg-foreground/5 bg-stone-800/30">
             <h3 className="text-lg sm:text-xl font-semibold mb-3">Education</h3>
             <p className="text-sm sm:text-base text-foreground/70">
-              Bachelor's of Science in Computer Science from John Jay College. Professional certificates in: <br/> Agile Framework–– LinkedIn Learning.<br/>IT Support Specialist–– IBM.
+              Bachelor's of Science in Computer Science from John Jay College. Professional certificates in: <br/> Agile Framework&mdash;LinkedIn Learning.<br/>IT Support Specialist&mdash;IBM.
             </p>
           </div>
 
