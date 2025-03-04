@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaRegCircle } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const experienceData = [
   {
@@ -9,7 +10,7 @@ const experienceData = [
     responsibilities: [
       "Facilitated the development of a news reporting application with generated metadata, blockchain hash storage and in-app file compression and upload for Android and iOS devices with improved UI.",
       "Implemented media provenance for videos and images sourced between Vngle and partnered media companies using eWitness blockchain API and node packages.",
-      "Improved CMS with optimized media processing for file compression and 50% faster upload speed using node packages, AWS services and SDK’s."
+      "Improved CMS with optimized media processing for file compression and 50% faster upload speed using node packages, AWS services and SDK's."
     ]
   },
   {
@@ -39,24 +40,61 @@ export default function Experience() {
   return (
     <section id="experience" className="min-h-screen flex items-center justify-center p-4 sm:p-8">
       <div className="max-w-4xl w-full">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-6">Experience</h2>
-        <div className="space-y-6">
+        <motion.h2 
+          className="text-2xl sm:text-3xl font-bold mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Experience
+        </motion.h2>
+        <div className="space-y-8">
           {experienceData.map((item, index) => (
-            <div key={index}>
-              <div className="border-l-2 border-foreground pl-4">
-                <h3 className="text-lg sm:text-xl font-semibold">{item.company}</h3>
-                <p className="lg:text-sm sm:text-sm opacity-80">{item.role}</p>
-                <p className="lg:text-sm sm:text-sm opacity-40">{item.duration}</p>
-                <ul className="list-disc list-inside mt-2 lg:text-sm sm:text-base">
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
+              <div className="border-l-2 border-foreground/30 pl-6 relative">
+                <div className="absolute left-[-5px] top-2 bg-background">
+                  <FaRegCircle className="w-2 h-2 text-foreground/80" />
+                </div>
+                <div className="group">
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-1 transition-colors">
+                    {item.company}
+                  </h3>
+                  <p className="text-base sm:text-lg text-foreground/80 font-medium mb-1">
+                    {item.role}
+                  </p>
+                  <p className="text-sm text-foreground/60 mb-4 font-light">
+                    {item.duration}
+                  </p>
+                </div>
+                <ul className="space-y-3">
                   {item.responsibilities.map((responsibility, idx) => (
-                    <li key={idx}>{responsibility}</li>
+                    <motion.li 
+                      key={idx}
+                      className="text-sm sm:text-base text-foreground/70 leading-relaxed pl-4 relative"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: 0.1 + idx * 0.1 }}
+                    >
+                      <span className="absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full bg-foreground/30" />
+                      {responsibility}
+                    </motion.li>
                   ))}
                 </ul>
               </div>
               {index < experienceData.length - 1 && (
-                <FaRegCircle className="opacity-50 my-3 -mx-1 w-3 h-3" />
+                <div className="pl-6 mt-8">
+
+                </div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

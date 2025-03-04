@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function Contact() {
   const handleEmailClick = () => {
@@ -10,34 +11,91 @@ export default function Contact() {
   return (
     <section id="contact" className="min-h-screen flex items-center justify-center p-4 sm:p-8">
       <div className="max-w-4xl w-full">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-6">Contact</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {/* Email Card */}
-          <button
+        <motion.h2 
+          className="text-2xl sm:text-3xl font-bold mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Contact
+        </motion.h2>
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <motion.button
             onClick={handleEmailClick}
-            className="bg-foreground/5 bg-stone-800/30 rounded-lg p-6 text-left transition-all hover:bg-stone-800/50 hover:scale-[1.02]"
+            className="bg-foreground/5 bg-stone-800/30 rounded-lg p-6 text-left transition-all hover:bg-stone-800/50"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 400 }}
           >
-            <div className="flex items-center gap-4 mb-4">
+            <motion.div 
+              className="flex items-center gap-4 mb-4"
+              initial={{ x: -20 }}
+              whileInView={{ x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
               <FaEnvelope className="text-2xl" />
               <h3 className="text-lg font-semibold">Email</h3>
-            </div>
-            <p className="text-sm text-foreground/70">Koffison29@gmail.com</p>
-          </button>
+            </motion.div>
+            <motion.p 
+              className="text-sm text-foreground/70"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              Koffison29@gmail.com
+            </motion.p>
+          </motion.button>
 
-          {/* LinkedIn Card */}
-          <Link
-            href="https://www.linkedin.com/in/koffison-voumadi/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-foreground/5 bg-stone-800/30 rounded-lg p-6 transition-all hover:bg-stone-800/50 hover:scale-[1.02]"
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <div className="flex items-center gap-4 mb-4">
-              <FaLinkedin className="text-2xl" />
-              <h3 className="text-lg font-semibold">LinkedIn</h3>
-            </div>
-            <p className="text-sm text-foreground/70">Connect with me on LinkedIn</p>
-          </Link>
-        </div>
+            <Link
+              href="https://www.linkedin.com/in/koffison-voumadi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <motion.div 
+                className="bg-foreground/5 bg-stone-800/30 rounded-lg p-6 transition-all hover:bg-stone-800/50"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400 }}
+              >
+                <motion.div 
+                  className="flex items-center gap-4 mb-4"
+                  initial={{ x: 20 }}
+                  whileInView={{ x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                >
+                  <FaLinkedin className="text-2xl" />
+                  <h3 className="text-lg font-semibold">LinkedIn</h3>
+                </motion.div>
+                <motion.p 
+                  className="text-sm text-foreground/70"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                >
+                  Connect with me on LinkedIn
+                </motion.p>
+              </motion.div>
+            </Link>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

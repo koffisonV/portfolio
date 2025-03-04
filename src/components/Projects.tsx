@@ -2,6 +2,7 @@ import React from 'react';
 import Marquee from 'react-fast-marquee';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function Projects() {
   const projects = [
@@ -49,66 +50,118 @@ export default function Projects() {
   return (
     <section id="projects" className="min-h-screen flex items-center justify-center p-4 sm:p-8">
       <div className="max-w-4xl w-full">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-6">Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
-            <Link 
-              href={project.link}
-              key={index}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-foreground/5 bg-stone-800/30 rounded-lg overflow-hidden transition-all hover:bg-stone-800/50 hover:scale-[1.02]"
-            >
-              <div className="relative w-full h-48">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                  priority={index === 0}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-sm text-foreground/70 mb-4">
-                  {project.description}
-                </p>
-                <div className="flex gap-2 flex-wrap">
-                  {project.technologies.map((tech, i) => (
-                    <span key={i} className="text-xs px-2 py-1 bg-foreground/10 rounded-full">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-        {/* Sliding banner of skills */}
-        <h3 className="text-lg sm:text-xl text-center font-semibold pt-9">Skills</h3>
-        <Marquee 
-          gradient={true}
-          gradientColor="#0a0a0a"
-          speed={50}
-          className="mt-8 h-24 -z-10"
+        <motion.h2 
+          className="text-2xl sm:text-3xl font-bold mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
         >
-          <div className="flex gap-10 sm:gap-16 px-12 items-center h-full">
-            {skills.map((skill, index) => (
-              <div key={index} className="flex flex-col items-center justify-center h-full">
-                <Image
-                  src={skill.src}
-                  alt={skill.alt}
-                  width={48}
-                  height={48}
-                  className="object-contain"
-                  sizes="48px"
-                />
-                <p className="text-xs text-center text-white mt-1">{skill.alt}</p>
-              </div>
-            ))}
-          </div>
-        </Marquee>
+          Projects
+        </motion.h2>
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
+              <Link 
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-foreground/5 bg-stone-800/30 rounded-lg overflow-hidden transition-all hover:bg-stone-800/50"
+              >
+                <motion.div 
+                  className="relative w-full h-48"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    priority={index === 0}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </motion.div>
+                <div className="p-6">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2">{project.title}</h3>
+                  <p className="text-sm text-foreground/70 mb-4">
+                    {project.description}
+                  </p>
+                  <div className="flex gap-2 flex-wrap">
+                    {project.technologies.map((tech, i) => (
+                      <motion.span 
+                        key={i} 
+                        className="text-xs px-2 py-1 bg-foreground/10 rounded-full"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.3, delay: 0.1 + i * 0.1 }}
+                      >
+                        {tech}
+                      </motion.span>
+                    ))}
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </motion.div>
+        
+        <motion.h3 
+          className="text-lg sm:text-xl text-center font-semibold pt-9"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          Skills
+        </motion.h3>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <Marquee 
+            gradient={true}
+            gradientColor="#0a0a0a"
+            speed={50}
+            className="mt-8 h-24 -z-10"
+          >
+            <div className="flex gap-10 sm:gap-16 px-12 items-center h-full">
+              {skills.map((skill, index) => (
+                <motion.div 
+                  key={index} 
+                  className="flex flex-col items-center justify-center h-full"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Image
+                    src={skill.src}
+                    alt={skill.alt}
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                    sizes="48px"
+                  />
+                  <p className="text-xs text-center text-white mt-1">{skill.alt}</p>
+                </motion.div>
+              ))}
+            </div>
+          </Marquee>
+        </motion.div>
       </div>
     </section>
   );
