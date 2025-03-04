@@ -134,33 +134,34 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <Marquee 
+            <Marquee 
             gradient={true}
+            gradientWidth={50}
             gradientColor="#0a0a0a"
             speed={50}
             className="mt-8 h-24 -z-10"
-          >
+            >
             <div className="flex gap-10 sm:gap-16 px-12 items-center h-full">
               {skills.map((skill, index) => (
-                <motion.div 
-                  key={index} 
-                  className="flex flex-col items-center justify-center h-full"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <Image
-                    src={skill.src}
-                    alt={skill.alt}
-                    width={48}
-                    height={48}
-                    className="object-contain"
-                    sizes="48px"
-                  />
-                  <p className="text-xs text-center text-white mt-1">{skill.alt}</p>
-                </motion.div>
+              <motion.div 
+                key={index} 
+                className="flex flex-col items-center justify-center h-full"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Image
+                src={skill.src}
+                alt={skill.alt}
+                width={48}
+                height={48}
+                className="object-contain"
+                sizes="48px"
+                />
+                <p className="text-xs text-center text-white mt-1">{skill.alt}</p>
+              </motion.div>
               ))}
             </div>
-          </Marquee>
+            </Marquee>
         </motion.div>
       </div>
     </section>

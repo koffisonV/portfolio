@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Inconsolata } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 
@@ -7,6 +7,12 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
+});
+
+const inconsolata = Inconsolata({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inconsolata",
 });
 
 export const metadata: Metadata = {
@@ -22,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} antialiased flex flex-col min-h-screen`}
+        className={`${inter.variable} ${inconsolata.variable} antialiased flex flex-col min-h-screen`}
       >
         {children}
         <Footer />

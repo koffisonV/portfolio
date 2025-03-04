@@ -89,11 +89,7 @@ export default function Experience() {
                   ))}
                 </ul>
               </div>
-              {index < experienceData.length - 1 && (
-                <div className="pl-6 mt-8">
-
-                </div>
-              )}
+              
             </motion.div>
           ))}
         </div>

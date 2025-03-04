@@ -2,6 +2,8 @@ import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
+const name = "Koffison Voumadi";
+
 export default function AboutMe() {
   return (
     <section id="about" className="min-h-screen flex items-center justify-center p-4 sm:p-8 pb-24">
@@ -15,18 +17,31 @@ export default function AboutMe() {
           Hello I&apos;m
         </motion.h3>
         <motion.h1 
-          className="text-3xl sm:text-3xl font-bold mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-3xl sm:text-3xl font-bold mb-6 font-mono"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.1 }}
         >
-          Koffison Voumadi
+          {name.split("").map((char, index) => (
+            <motion.span
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.1,
+                delay: index * 0.05,
+                ease: "easeOut"
+              }}
+            >
+              {char}
+            </motion.span>
+          ))}
         </motion.h1>
         <motion.span 
           className="text-md text-foreground/60 opacity-80 block"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
         >
           Full Stack Software Engineer
         </motion.span>
@@ -34,7 +49,7 @@ export default function AboutMe() {
           className="text-sm opacity-70"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
         >
           📍 New York, NY
         </motion.p>
@@ -43,7 +58,7 @@ export default function AboutMe() {
           className="flex gap-4 mt-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
         >
           <a href="https://www.linkedin.com/in/koffison-voumadi/" 
              target="_blank" 
@@ -63,7 +78,7 @@ export default function AboutMe() {
           className="flex flex-col md:flex-row gap-4 md:gap-8 mt-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
         >
           <motion.div 
             className="flex-1 p-4 sm:p-6 rounded-lg bg-foreground/5 bg-stone-800/30"
