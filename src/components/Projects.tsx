@@ -14,15 +14,22 @@ export default function Projects() {
       image: "images/vngle.jpg"
     },
     {
+      title: "LaundriFi",
+      description: "A web-based laundry scheduler that reduces congestion in apartments with limited machines by enabling real-time availability checks and reservations.",
+      technologies: ["Next.js", "Vercel", "Supabase", "Tailwind CSS", "Postgres", "Restful API", "CronJob"],
+      link: "https://youtu.be/1uK_ddNC_T8",
+      image: "images/laundrifi.jpg"
+    },
+    {
       title: "Rick and Morty",
       description: "An interactive web application that delves into the fantastic world of the beloved TV series, Rick and Morty—Made Possible using the Rick and Morty API.",
-      technologies: ["React", "RESTful API", "Tailwind"],
+      technologies: ["React", "RESTful API", "Tailwind CSS"],
       link: "https://koffisonv.github.io/rickandmortywiki/",
       image: "images/rickandmorty.gif"
     },
     {
       title: "MyVPN",
-      description: "The goal of the project is to analyze network traffic through VPNs using Wireshark, to see the efficiency of different vpn protocols used in existing VPN software like NordVPN as well as a self-hosted VPN built from scratch.",
+      description: "This exploratory project involves building a self-hosted VPN and using Wireshark to analyze its efficiency compared to commercial VPN protocols like NordVPN.",
       technologies: ["OpenVPN - protocol", "EC2 server", "Shell Scripting"],
       link: "https://youtu.be/xHemKKHjR0s",
       image: "images/openvpn.jpg"
