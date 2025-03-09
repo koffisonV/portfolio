@@ -16,7 +16,7 @@ export default function Projects() {
     {
       title: "LaundriFi",
       description: "A web-based laundry scheduler that reduces congestion in apartments with limited machines by enabling real-time availability checks and reservations.",
-      technologies: ["Next.js", "Vercel", "Supabase", "Tailwind CSS", "Postgres", "Restful API", "CronJob"],
+      technologies: ["Next.js", "Supabase", "Tailwind CSS", "Postgres", "Restful API", "CronJob"],
       link: "https://youtu.be/1uK_ddNC_T8",
       image: "images/laundrifi.jpg"
     },
