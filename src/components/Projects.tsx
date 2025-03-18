@@ -16,15 +16,15 @@ export default function Projects() {
     {
       title: "LaundriFi",
       description: "A web-based laundry scheduler that reduces congestion in apartments with limited machines by enabling real-time availability checks and reservations.",
-      technologies: ["Next.js", "Supabase", "Tailwind CSS", "Postgres", "Restful API", "CronJob"],
-      link: "https://youtu.be/1uK_ddNC_T8",
+      technologies: ["Next.js", "Supabase", "Docker", "Postgres", "Tailwind CSS", "Restful API", "CronJob"],
+      link: "https://github.com/koffisonV/laundrifi",
       image: "images/laundrifi.jpg"
     },
     {
       title: "Rick and Morty",
       description: "An interactive web application that delves into the fantastic world of the beloved TV series, Rick and Morty—Made Possible using the Rick and Morty API.",
       technologies: ["React", "RESTful API", "Tailwind CSS"],
-      link: "https://koffisonv.github.io/rickandmortywiki/",
+      link: "https://github.com/koffisonV/rickandmortywiki",
       image: "images/rickandmorty.gif"
     },
     {
@@ -120,6 +120,7 @@ export default function Projects() {
                       </motion.span>
                     ))}
                   </div>
+                  {/* TODO: Render 2 buttons, 1 linking to demo video || website, 1 linking to github repo */}
                 </div>
               </Link>
             </motion.div>
