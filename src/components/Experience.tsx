@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const experienceData = [
   {
     company: "Vngle Grassroots News Agency",
-    role: "Mobile Engineer Fellow",
+    role: "Mobile Engineering Fellow",
     duration: "Jun 2024 - Present",
     responsibilities: [
       "Facilitated the development of a news reporting application with generated metadata, blockchain hash storage and in-app file compression and upload for Android and iOS devices with improved UI.",
