@@ -9,7 +9,7 @@ const experienceData = [
     duration: "Jun 2024 - Present",
     responsibilities: [
       "Facilitated the development of a news reporting application with generated metadata, blockchain hash storage and in-app file compression and upload for Android and iOS devices with improved UI.",
-      "Implemented media provenance for videos and images sourced between Vngle and partnered media companies using eWitness blockchain API and node packages.",
+      "Implemented media provenance for videos and images sourced between Vngle and partnered media companies using Blockchain API and node packages.",
       "Improved CMS with optimized media processing for file compression and 50% faster upload speed using node packages, AWS services and SDK's."
     ]
   },
