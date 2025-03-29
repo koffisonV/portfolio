@@ -59,8 +59,8 @@ export default function Experience() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
               <div className="border-l-2 border-foreground/30 pl-6 relative">
-                <div className="absolute left-[-5px] top-2 bg-background">
-                  <FaRegCircle className="w-2 h-2 text-foreground/80" />
+                <div className="absolute left-[-7px] top-2 bg-background">
+                  <FaRegCircle className="w-3 h-3 text-foreground/80" />
                 </div>
                 <div className="group">
                   <h3 className="text-xl sm:text-2xl font-semibold mb-1 transition-colors">
