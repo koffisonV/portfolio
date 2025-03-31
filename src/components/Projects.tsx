@@ -3,6 +3,7 @@ import Marquee from 'react-fast-marquee';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { FaClipboardList, FaDesktop } from 'react-icons/fa';
 
 export default function Projects() {
   const projects = [
@@ -127,6 +128,58 @@ export default function Projects() {
           ))}
         </motion.div>
         
+        <motion.h3 
+          className="text-lg sm:text-xl text-center font-semibold pt-9"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          Specializations
+        </motion.h3>
+        <motion.div 
+          className="flex justify-center items-center gap-8 mt-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <Link 
+            href="https://www.coursera.org/account/accomplishments/specialization/0JBR7GT6IEJU"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <motion.div 
+              className="flex flex-col items-center cursor-pointer group"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <div className="w-16 h-16 bg-foreground/5 rounded-full flex items-center justify-center mb-2 group-hover:bg-foreground/10 transition-colors">
+                <FaDesktop className="h-8 w-8 text-foreground/70 group-hover:text-foreground/90 transition-colors" />
+              </div>
+              <h4 className="text-sm font-medium group-hover:text-foreground/90 transition-colors">IT Support Specialist</h4>
+              <p className="text-xs text-foreground/70 group-hover:text-foreground/90 transition-colors">IBM</p>
+            </motion.div>
+          </Link>
+          {/* <Link 
+            href="https://www.linkedin.com/learning/certificates/0fcf10cfd0b58b18c9cd46652b6e19edb1a0f2c2df4d4442dda7a6ea7e9c1bf3"
+            target="_blank"
+            rel="noopener noreferrer"
+          > */}
+            <motion.div 
+              className="flex flex-col items-center cursor-pointer group"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <div className="w-16 h-16 bg-foreground/5 rounded-full flex items-center justify-center mb-2 group-hover:bg-foreground/10 transition-colors">
+                <FaClipboardList className="h-8 w-8 text-foreground/70 group-hover:text-foreground/90 transition-colors" />
+              </div>
+              <h4 className="text-sm font-medium group-hover:text-foreground/90 transition-colors">Agile Methodology</h4>
+              <p className="text-xs text-foreground/70 group-hover:text-foreground/90 transition-colors">LinkedIn Learning</p>
+            </motion.div>
+          {/* </Link> */}
+        </motion.div>
+
         <motion.h3 
           className="text-lg sm:text-xl text-center font-semibold pt-9"
           initial={{ opacity: 0, y: 20 }}
