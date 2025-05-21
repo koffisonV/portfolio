@@ -21,7 +21,8 @@ const experienceData = [
       "Participate in bootcamps aimed at enhancing technical skills and preparing for future career opportunities.",
       "Engaged in career readiness workshops, professional development, and networking events to build a strong foundation for transitioning into full-time tech.",
       "Developed functional apps, servers, and databases using programming tools such as React, Node.js, Git, PostgreSQL, and REST API during a 10-week bootcamp.",
-      "Built and hosted a fully functional Single-page web application hosted on GitHub and presented it as capstone project to facilitators and peers."
+      "Built and hosted a fully functional Single-page web application hosted on GitHub and presented it as capstone project to facilitators and peers.",
+      "Learned cybersecurity fundamentals (e.g., network security, OS/Application security, security policies and procedures, risk management) by completing an 8-week cybersecurity bootcamp"
     ]
   },
   {
@@ -29,8 +30,8 @@ const experienceData = [
     role: "Web Developer",
     duration: "May 2021 - Jul 2022",
     responsibilities: [
-      "Maintained and optimized the company's WordPress website by managing dashboard plugins, creating a database for blog posts and comments, and installing security access tools.",
-      "Enhanced UX/UI, improving website functionality and ensuring seamless functionality for better user experience.",
+      "Designed and developed the company's landing page using WordPress, managing dashboard plugins, creating a database using phpMyAdmin for blog posts and comments, and installing security tools",
+      "Enhanced UX/UI, improving website functionality and ensuring seamless functionality for better user experience",
       "Provided creative designs and production of books for catalog improvement."
     ]
   }
