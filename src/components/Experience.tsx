@@ -8,9 +8,9 @@ const experienceData = [
     role: "Mobile Engineering Fellow",
     duration: "Jun 2024 - Present",
     responsibilities: [
-      "Facilitated the development of a news reporting application with generated metadata, blockchain hash storage and in-app file compression and upload for Android and iOS devices with improved UI.",
-      "Implemented media provenance for videos and images sourced between Vngle and partnered media companies using Blockchain API and node packages.",
-      "Improved CMS with optimized media processing for file compression and 50% faster upload speed using node packages, AWS services and SDK's."
+      "Facilitated the development of a reporter application with metadata, blockchain hash storage and file compression and upload for mobile devices with improved UI.",
+      "Implemented media provenance for videos and images sourced between Vngle and partners using a blockchain API and node packages.",
+      "Improved CMS with optimized media processing for file compression and 50% faster upload speed using node packages, AWS services and SDK’s."
     ]
   },
   {
