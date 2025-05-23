@@ -65,7 +65,7 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Projects
+          Projects & Contributions
         </motion.h2>
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
