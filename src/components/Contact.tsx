@@ -29,7 +29,7 @@ export default function Contact() {
         >
           <motion.button
             onClick={handleEmailClick}
-            className="bg-foreground/5 bg-stone-800/30 rounded-lg p-6 text-left transition-all hover:bg-stone-800/50"
+            className="bg-[var(--box-background)] text-[var(--box-foreground)] rounded-lg p-6 text-left transition-all hover:opacity-90"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             transition={{ type: "spring", stiffness: 400 }}
@@ -67,8 +67,8 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="block"
             >
-              <motion.div 
-                className="bg-foreground/5 bg-stone-800/30 rounded-lg p-6 transition-all hover:bg-stone-800/50"
+              <motion.div
+                className="bg-[var(--box-background)] text-[var(--box-foreground)] rounded-lg p-6 transition-all hover:opacity-90"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400 }}

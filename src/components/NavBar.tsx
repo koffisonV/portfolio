@@ -17,7 +17,7 @@ export default function NavBar({ activeSection, onSectionChange }: NavBarProps) 
 
   return (
     <nav className="fixed bottom-16 sm:bottom-15 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] sm:w-auto">
-      <div className="bg-foreground/10 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full">
+      <div className="bg-foreground/10 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3 rounded-full border border-foreground/20">
         <ul className="flex justify-around sm:justify-start sm:gap-8">
           {navItems.map(({ id, label }) => (
             <li key={id}>
@@ -28,8 +28,8 @@ export default function NavBar({ activeSection, onSectionChange }: NavBarProps) 
                 }}
                 className={`sm:text-sm font-medium transition-all px-2 sm:px-3 py-1 sm:py-1.5 rounded-full whitespace-nowrap ${
                   activeSection === id
-                    ? 'text-black bg-white'
-                    : 'text-white/80 hover:text-white hover:bg-white/10'
+                    ? 'text-background bg-foreground'
+                    : 'text-foreground/80 hover:text-foreground hover:bg-foreground/10'
                 }`}
               >
                 {label}

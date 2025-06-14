@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import { FaRegCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -10,8 +10,8 @@ const experienceData = [
     responsibilities: [
       "Facilitated the development of a reporter application with metadata, blockchain hash storage and file compression and upload for mobile devices with improved UI.",
       "Implemented media provenance for videos and images sourced between Vngle and partners using a blockchain API and node packages.",
-      "Improved CMS with optimized media processing for file compression and 50% faster upload speed using node packages, AWS services and SDK’s."
-    ]
+      "Improved CMS with optimized media processing for file compression and 50% faster upload speed using node packages, AWS services and SDK's.",
+    ],
   },
   {
     company: "NYC Tech Talent Pipeline",
@@ -22,8 +22,8 @@ const experienceData = [
       "Engaged in career readiness workshops, professional development, and networking events to build a strong foundation for transitioning into full-time tech.",
       "Developed functional apps, servers, and databases using programming tools such as React, Node.js, Git, PostgreSQL, and REST API during a 10-week bootcamp.",
       "Built and hosted a fully functional Single-page web application hosted on GitHub and presented it as capstone project to facilitators and peers.",
-      "Learned cybersecurity fundamentals (e.g., network security, OS/Application security, security policies and procedures, risk management) by completing an 8-week cybersecurity bootcamp"
-    ]
+      "Learned cybersecurity fundamentals (e.g., network security, OS/Application security, security policies and procedures, risk management) by completing an 8-week cybersecurity bootcamp",
+    ],
   },
   {
     company: "RecProf",
@@ -32,16 +32,65 @@ const experienceData = [
     responsibilities: [
       "Designed and developed the company's landing page using WordPress, managing dashboard plugins, creating a database using phpMyAdmin for blog posts and comments, and installing security tools",
       "Enhanced UX/UI, improving website functionality and ensuring seamless functionality for better user experience",
-      "Provided creative designs and production of books for catalog improvement."
-    ]
-  }
+      "Provided creative designs and production of books for catalog improvement.",
+    ],
+  },
 ];
+
+const TypewriterLoading = () => {
+  const [text, setText] = useState("");
+  const [dots, setDots] = useState("");
+  const [hasStarted, setHasStarted] = useState(false);
+  const fullText = "New experience coming soon";
+  
+  useEffect(() => {
+    if (!hasStarted) return;
+    
+    let currentIndex = 0;
+    let dotsIndex = 0;
+    
+    const typeInterval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setText(fullText.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(typeInterval);
+      }
+    }, 100);
+    
+    const dotsInterval = setInterval(() => {
+      if (currentIndex > fullText.length) {
+        setDots(".".repeat(dotsIndex % 4));
+        dotsIndex++;
+      }
+    }, 500);
+    
+    return () => {
+      clearInterval(typeInterval);
+      clearInterval(dotsInterval);
+    };
+  }, [hasStarted]);
+  
+  return (
+    <motion.span 
+      className="inline-block"
+      onViewportEnter={() => setHasStarted(true)}
+      viewport={{ once: true }}
+    >
+      {text}
+      <span className="animate-pulse">{dots}</span>
+    </motion.span>
+  );
+};
 
 export default function Experience() {
   return (
-    <section id="experience" className="min-h-screen flex items-center justify-center p-4 sm:p-8">
+    <section
+      id="experience"
+      className="min-h-screen flex items-center justify-center p-4 sm:p-8"
+    >
       <div className="max-w-4xl w-full">
-        <motion.h2 
+        <motion.h2
           className="text-2xl sm:text-3xl font-bold mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,9 +99,35 @@ export default function Experience() {
         >
           Experience
         </motion.h2>
+
+        <motion.div
+          className="mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <div className="border-l-2 border-foreground/30 pl-6 relative">
+            <div className="absolute left-[-7px] top-2 bg-background">
+              <FaRegCircle className="w-3 h-3 text-foreground/80" />
+            </div>
+            <div className="group">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-1 transition-colors text-foreground/60">
+                <TypewriterLoading />
+              </h3>
+              <p className="text-base sm:text-lg text-foreground/60 font-medium mb-1">
+                Stay tuned!
+              </p>
+              <p className="text-sm text-foreground/40 mb-4 font-light">
+                Loading...
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
         <div className="space-y-8">
           {experienceData.map((item, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -76,7 +151,7 @@ export default function Experience() {
                 </div>
                 <ul className="space-y-3">
                   {item.responsibilities.map((responsibility, idx) => (
-                    <motion.li 
+                    <motion.li
                       key={idx}
                       className="text-sm sm:text-base text-foreground/70 leading-relaxed pl-4 relative"
                       initial={{ opacity: 0 }}
@@ -90,7 +165,6 @@ export default function Experience() {
                   ))}
                 </ul>
               </div>
-              
             </motion.div>
           ))}
         </div>

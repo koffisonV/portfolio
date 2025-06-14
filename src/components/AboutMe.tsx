@@ -81,7 +81,7 @@ export default function AboutMe() {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <motion.div 
-            className="flex-1 p-4 sm:p-6 rounded-lg bg-foreground/5 bg-stone-800/30"
+            className="flex-1 p-4 sm:p-6 rounded-lg bg-[var(--box-background)] text-[var(--box-foreground)]"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
@@ -92,7 +92,7 @@ export default function AboutMe() {
           </motion.div>
           
           <motion.div 
-            className="flex-1 p-4 sm:p-6 rounded-lg bg-foreground/5 bg-stone-800/30"
+            className="flex-1 p-4 sm:p-6 rounded-lg bg-[var(--box-background)] text-[var(--box-foreground)]"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
@@ -103,7 +103,7 @@ export default function AboutMe() {
           </motion.div>
 
           <motion.div 
-            className="flex-1 p-4 sm:p-6 rounded-lg bg-foreground/5 bg-stone-800/30"
+            className="flex-1 p-4 sm:p-6 rounded-lg bg-[var(--box-background)] text-[var(--box-foreground)]"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >

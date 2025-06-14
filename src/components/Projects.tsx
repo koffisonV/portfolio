@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Marquee from 'react-fast-marquee';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaClipboardList, FaDesktop } from 'react-icons/fa';
+import { useTheme } from '../hooks/useTheme';
 
 export default function Projects() {
+  const theme = useTheme();
   const projects = [
     {
       title: "Vngle Reporter",
@@ -86,7 +88,7 @@ export default function Projects() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block bg-foreground/5 bg-stone-800/30 rounded-lg overflow-hidden transition-all hover:bg-stone-800/50"
+                className="block bg-[var(--box-background)] text-[var(--box-foreground)] rounded-lg overflow-hidden transition-all hover:opacity-90"
               >
                 <motion.div 
                   className="relative w-full h-48"
@@ -154,7 +156,7 @@ export default function Projects() {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="w-16 h-16 bg-foreground/5 rounded-full flex items-center justify-center mb-2 group-hover:bg-foreground/10 transition-colors">
+              <div className="w-16 h-16 bg-[var(--box-background)] text-[var(--box-foreground)] rounded-full flex items-center justify-center mb-2 group-hover:opacity-90 transition-colors">
                 <FaDesktop className="h-8 w-8 text-foreground/70 group-hover:text-foreground/90 transition-colors" />
               </div>
               <h4 className="text-sm font-medium group-hover:text-foreground/90 transition-colors">IT Support Specialist</h4>
@@ -171,7 +173,7 @@ export default function Projects() {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="w-16 h-16 bg-foreground/5 rounded-full flex items-center justify-center mb-2 group-hover:bg-foreground/10 transition-colors">
+              <div className="w-16 h-16 bg-[var(--box-background)] text-[var(--box-foreground)] rounded-full flex items-center justify-center mb-2 group-hover:opacity-90 transition-colors">
                 <FaClipboardList className="h-8 w-8 text-foreground/70 group-hover:text-foreground/90 transition-colors" />
               </div>
               <h4 className="text-sm font-medium group-hover:text-foreground/90 transition-colors">Agile Methodology</h4>
@@ -198,7 +200,7 @@ export default function Projects() {
             <Marquee 
             gradient={true}
             gradientWidth={50}
-            gradientColor="#0a0a0a"
+            gradientColor={theme === 'light' ? '#fff' : '#0a0a0a'}
             speed={50}
             className="mt-8 h-24 -z-10"
             >
@@ -215,10 +217,10 @@ export default function Projects() {
                 alt={skill.alt}
                 width={48}
                 height={48}
-                className="object-contain"
+                className={`object-contain ${theme === 'light' ? 'filter invert-0 grayscale brightness-0' : ''}`}
                 sizes="48px"
                 />
-                <p className="text-xs text-center text-white mt-1">{skill.alt}</p>
+                <p className={`text-xs text-center mt-1 ${theme === 'light' ? 'text-black' : 'text-white'}`}>{skill.alt}</p>
               </motion.div>
               ))}
             </div>

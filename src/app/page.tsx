@@ -6,6 +6,7 @@ import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import Projects from "@/components/Projects";
 import NavBar from "@/components/NavBar";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<'about' | 'experience' | 'projects' | 'contact'>('about');
@@ -33,6 +34,7 @@ export default function Home() {
 
   return (
     <main className="w-full">
+      <ThemeToggle />
       <AboutMe />
       <Experience />
       <Projects />
