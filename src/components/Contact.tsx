@@ -1,11 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Contact() {
-  const handleEmailClick = () => {
-    window.location.href = 'mailto:koffison29@gmail.com';
+  const [emailCopied, setEmailCopied] = useState(false);
+
+  const handleEmailClick = async () => {
+    const email = 'koffison29@gmail.com';
+    
+    try {
+      // Try the modern Clipboard API first
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(email);
+        setEmailCopied(true);
+        setTimeout(() => setEmailCopied(false), 2000);
+      } else {
+        // Fallback for mobile devices and older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = email;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        
+        try {
+          document.execCommand('copy');
+          setEmailCopied(true);
+          setTimeout(() => setEmailCopied(false), 2000);
+        } catch (err) {
+          console.error('Fallback copy failed: ', err);
+        } finally {
+          document.body.removeChild(textArea);
+        }
+      }
+    } catch (err) {
+      console.error('Failed to copy email: ', err);
+    }
   };
 
   return (
@@ -44,15 +77,31 @@ export default function Contact() {
               <FaEnvelope className="text-2xl" />
               <h3 className="text-lg font-semibold">Email</h3>
             </motion.div>
-            <motion.p 
-              className="text-sm text-foreground/70"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              Koffison29@gmail.com
-            </motion.p>
+            <AnimatePresence mode="wait">
+              {emailCopied ? (
+                <motion.p 
+                  key="copied"
+                  className="text-sm text-green-500 font-medium"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  Copied to clipboard!
+                </motion.p>
+              ) : (
+                <motion.p 
+                  key="email"
+                  className="text-sm text-foreground/70"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  Koffison29@gmail.com
+                </motion.p>
+              )}
+            </AnimatePresence>
           </motion.button>
 
           <motion.div

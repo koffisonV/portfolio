@@ -3,39 +3,43 @@ import Marquee from 'react-fast-marquee';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { FaClipboardList, FaDesktop } from 'react-icons/fa';
+import { FaClipboardList, FaDesktop, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { useTheme } from '../hooks/useTheme';
 
 export default function Projects() {
   const theme = useTheme();
   const projects = [
     {
-      title: "Vngle Reporter",
-      description: "A blockchain media provenance system for reporting and verifying the authenticity of media content among content delivery networks.",
-      technologies: ["React native", "AWS", "Expo.js", "Tailwind CSS", "Blockchain API"],
-      link: "https://www.vngle.com/",
-      image: "images/vngle2.jpg"
-    },
-    {
       title: "LaundriFi",
       description: "A web-based laundry scheduler that reduces congestion in apartments with limited machines by enabling real-time availability checks and reservations.",
       technologies: ["Next.js", "Supabase", "Docker", "Postgres", "Tailwind CSS", "Restful API", "CronJob"],
-      link: "https://github.com/koffisonV/laundrifi",
-      image: "images/laundrifi.jpg"
-    },
-    {
-      title: "Rick and Morty",
-      description: "An interactive web application that delves into the fantastic world of the beloved TV series, Rick and Morty—Made Possible using the Rick and Morty API.",
-      technologies: ["React", "RESTful API", "Tailwind CSS"],
-      link: "https://github.com/koffisonV/rickandmortywiki",
-      image: "images/rickandmorty.gif"
+      image: "images/laundrifi.jpg",
+      github: "https://github.com/koffisonV/laundrifi",
+      external: "https://laundrifi.vercel.app"
     },
     {
       title: "MyVPN",
       description: "This exploratory project involves building a self-hosted VPN and using Wireshark to analyze its efficiency compared to commercial VPN protocols like NordVPN.",
       technologies: ["OpenVPN - protocol", "EC2 server", "Shell Scripting"],
-      link: "https://youtu.be/xHemKKHjR0s",
-      image: "images/openvpn.jpg"
+      image: "images/openvpn.jpg",
+      github: "https://github.com/koffisonV/myvpn",
+      external: "https://youtu.be/xHemKKHjR0s"
+    },
+    {
+      title: "Vngle Reporter",
+      description: "A blockchain media provenance system for reporting and verifying the authenticity of media content among content delivery networks.",
+      technologies: ["React native", "AWS", "Expo.js", "Tailwind CSS", "Blockchain API"],
+      image: "images/vngle2.jpg",
+      github: null,
+      external: "https://www.vngle.com/"
+    },
+    {
+      title: "Rick and Morty",
+      description: "An interactive web application that delves into the fantastic world of the beloved TV series, Rick and Morty—Made Possible using the Rick and Morty API.",
+      technologies: ["React", "RESTful API", "Tailwind CSS"],
+      image: "images/rickandmorty.gif",
+      github: "https://github.com/koffisonV/rickandmortywiki",
+      external: "https://koffisonv.github.io/rickandmortywiki/"
     }
   ];
 
@@ -70,7 +74,7 @@ export default function Projects() {
           Projects & Contributions
         </motion.h2>
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -84,11 +88,8 @@ export default function Projects() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <Link 
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-[var(--box-background)] text-[var(--box-foreground)] rounded-lg overflow-hidden transition-all hover:opacity-90"
+              <div
+                className="block bg-[var(--box-background)] text-[var(--box-foreground)] rounded-lg overflow-hidden transition-all hover:opacity-90 h-full"
               >
                 <motion.div 
                   className="relative w-full h-48"
@@ -123,9 +124,45 @@ export default function Projects() {
                       </motion.span>
                     ))}
                   </div>
-                  {/* TODO: Render 2 buttons, 1 linking to demo video || website, 1 linking to github repo */}
+                  
+                  {/* Action Buttons */}
+                  <div className="flex gap-4 mt-4">
+                    {project.github && (
+                      <motion.a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 bg-foreground/10 hover:bg-foreground/20 rounded-lg transition-colors"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.3, delay: 0.2 }}
+                      >
+                        <FaGithub className="w-5 h-5" />
+                      </motion.a>
+                    )}
+                    
+                    {project.external && (
+                      <motion.a
+                        href={project.external}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 flex items-center justify-center bg-foreground/10 hover:bg-foreground/20 rounded-lg transition-colors"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.3, delay: 0.4 }}
+                      >
+                        <FaExternalLinkAlt className="w-4 h-4" />
+                      </motion.a>
+                    )}
+                  </div>
                 </div>
-              </Link>
+              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -217,7 +254,13 @@ export default function Projects() {
                 alt={skill.alt}
                 width={48}
                 height={48}
-                className={`object-contain ${theme === 'light' ? 'filter invert-0 grayscale brightness-0' : ''}`}
+                className={`object-contain ${
+                  theme === 'light' 
+                    ? skill.alt === 'Next.js' 
+                      ? 'filter invert' 
+                      : 'filter invert-0 grayscale brightness-0'
+                    : ''
+                }`}
                 sizes="48px"
                 />
                 <p className={`text-xs text-center mt-1 ${theme === 'light' ? 'text-black' : 'text-white'}`}>{skill.alt}</p>
