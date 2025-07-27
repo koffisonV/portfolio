@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const name = "Koffison Voumadi";
 
-// Shine effect component
 const ShineEffect = ({ isVisible }: { isVisible: boolean }) => (
   <AnimatePresence>
     {isVisible && (
@@ -29,7 +28,6 @@ const ShineEffect = ({ isVisible }: { isVisible: boolean }) => (
 export default function AboutMe() {
   const [shineStates, setShineStates] = useState([false, false, false]);
 
-  // Random shine effect
   useEffect(() => {
     const triggerRandomShine = () => {
       const randomCard = Math.floor(Math.random() * 3);
@@ -39,7 +37,6 @@ export default function AboutMe() {
         return newStates;
       });
 
-      // Hide shine after animation
       setTimeout(() => {
         setShineStates(prev => {
           const newStates = [...prev];
@@ -48,12 +45,10 @@ export default function AboutMe() {
         });
       }, 1000);
 
-      // Schedule next random shine
       const nextDelay = Math.random() * 3000 + 2000; // 2-5 seconds
       setTimeout(triggerRandomShine, nextDelay);
     };
 
-    // Start the random shine effect
     const initialDelay = Math.random() * 2000 + 1000; // 1-3 seconds initial delay
     const timer = setTimeout(triggerRandomShine, initialDelay);
 

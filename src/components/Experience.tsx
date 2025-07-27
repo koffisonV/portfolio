@@ -4,7 +4,6 @@ import CustomCursor from "./CustomCursor";
 import useIsLargeScreen from "../hooks/useIsLargeScreen";
 import ScreenSizeToast from "./ScreenSizeToast";
 
-// Custom X icon component with constant spinning animation
 const SpinningXIcon = () => (
   <motion.div
     className="w-6 h-6 flex items-center justify-center"
@@ -76,7 +75,7 @@ export default function Experience() {
       <section
         id="experience"
         className="min-h-screen flex items-center justify-center p-4 sm:p-8"
-        style={isLargeScreen ? { cursor: "none" } : {}}
+        // style={isLargeScreen ? { cursor: "none" } : {}}
       >
         <div className="max-w-4xl w-full">
           <motion.h2
@@ -92,8 +91,6 @@ export default function Experience() {
             {experienceData.map((item, index) => (
               <motion.div
                 key={index}
-                // onMouseEnter={isLargeScreen ? () => setHovered(false) : undefined}
-                // onMouseLeave={isLargeScreen ? () => setHovered(false) : undefined}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}

@@ -10,13 +10,11 @@ export default function Contact() {
     const email = 'koffison29@gmail.com';
     
     try {
-      // Try the modern Clipboard API first
       if (navigator.clipboard && navigator.clipboard.writeText) {
         await navigator.clipboard.writeText(email);
         setEmailCopied(true);
         setTimeout(() => setEmailCopied(false), 2000);
       } else {
-        // Fallback for mobile devices and older browsers
         const textArea = document.createElement('textarea');
         textArea.value = email;
         textArea.style.position = 'fixed';

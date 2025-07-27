@@ -125,7 +125,6 @@ export default function Projects() {
                     ))}
                   </div>
                   
-                  {/* Action Buttons */}
                   <div className="flex gap-4 mt-4">
                     {project.github && (
                       <motion.a
@@ -216,7 +215,6 @@ export default function Projects() {
               <h4 className="text-sm font-medium group-hover:text-foreground/90 transition-colors">Agile Methodology</h4>
               <p className="text-xs text-foreground/70 group-hover:text-foreground/90 transition-colors">LinkedIn Learning</p>
             </motion.div>
-          {/* </Link> */}
         </motion.div>
 
         <motion.h3 

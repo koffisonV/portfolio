@@ -28,7 +28,7 @@ const CustomCursor: React.FC<CustomCursorProps> = ({ hovered }) => {
         height: 32,
         borderRadius: "50%",
         background: hovered ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.1)",
-        border: "1px solid #fff",
+        // border: "5px solid transparent",
         pointerEvents: "none",
         zIndex: 9999,
         x: useSpring(cursorX, { stiffness: 500, damping: 30 }),
@@ -36,7 +36,6 @@ const CustomCursor: React.FC<CustomCursorProps> = ({ hovered }) => {
         mixBlendMode: "difference",
         transition: "background 0.2s, border 0.2s"
       }}
-      // animate={{ scale: hovered ? 2 : 1 }}
     />
   );
 };
