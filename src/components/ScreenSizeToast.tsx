@@ -16,7 +16,7 @@ const ScreenSizeToast: React.FC = () => {
 
   useEffect(() => {
     if (!show) return;
-    let start = Date.now();
+    const start = Date.now();
     const interval = setInterval(() => {
       const elapsed = Date.now() - start;
       const percent = Math.max(0, 100 - (elapsed / TOAST_DURATION) * 100);
