@@ -35,7 +35,7 @@ const experienceData = [
     duration: "June 2025 – Present",
     responsibilities: [
       "Developed new feature in company’s web application using React, Redux, SQL Server, and C# that allows scientists to customize experiment inputs for a gene editing method on automated liquid handling robots, reducing manual input and automating 60% of scientists' workflows to streamline lab operations.",
-      "In collabration with mechanical engineers and scientists, we gathered project requirements, refined the UX/UI, and supported iterative testing of the Global Stem Cell Array’s transfection process."
+      "In collaboration with mechanical engineers and scientists, we gathered project requirements, refined the UX/UI, and supported iterative testing of the Global Stem Cell Array’s transfection process."
     ],
   },
   {
