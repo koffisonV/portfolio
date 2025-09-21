@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaRegFileAlt } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const name = "Koffison Voumadi";
@@ -113,14 +113,23 @@ export default function AboutMe() {
           <a href="https://www.linkedin.com/in/koffison-voumadi/" 
              target="_blank" 
              rel="noopener noreferrer"
-             className="text-2xl hover:text-blue-400 transition-colors">
+             className="text-2xl hover:text-blue-400 transition-colors"
+             title="View LinkedIn">
             <FaLinkedin />
           </a>
           <a href="https://github.com/koffisonV" 
              target="_blank" 
              rel="noopener noreferrer" 
-             className="text-2xl hover:text-gray-400 transition-colors">
+             className="text-2xl hover:text-gray-400 transition-colors"
+             title="View GitHub">
             <FaGithub />
+          </a>
+          <a href="https://drive.google.com/file/d/1PeGuiMpnHLiUqbXsPAs3jpCryyrzQLmM/view?usp=sharing" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             className="text-2xl hover:text-orange-500 transition-colors"
+             title="View Resume">
+            <FaRegFileAlt />
           </a>
         </motion.div>
 
