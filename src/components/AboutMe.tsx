@@ -124,7 +124,7 @@ export default function AboutMe() {
              title="View GitHub">
             <FaGithub />
           </a>
-          <a href="https://drive.google.com/file/d/1PeGuiMpnHLiUqbXsPAs3jpCryyrzQLmM/view?usp=sharing" 
+          <a href="https://drive.google.com/file/d/1efOEAyNSjxSe_ER8-euT_Y3t78O_NpqU/view?usp=sharing" 
              target="_blank" 
              rel="noopener noreferrer" 
              className="text-2xl hover:text-orange-500 transition-colors"
