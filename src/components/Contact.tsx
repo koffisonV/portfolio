@@ -137,7 +137,7 @@ export default function Contact() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.5 }}
                 >
-                  Connect with me on LinkedIn
+                  Let&apos;s connect on LinkedIn!
                 </motion.p>
               </motion.div>
             </Link>
