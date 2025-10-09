@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { FaSun, FaMoon } from 'react-icons/fa';
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
@@ -13,7 +13,7 @@ export default function ThemeToggle() {
       setTheme(savedTheme);
       document.documentElement.setAttribute('data-theme', savedTheme);
     } else {
-      document.documentElement.setAttribute('data-theme', 'dark');
+      document.documentElement.setAttribute('data-theme', 'light');
     }
   }, []);
 
