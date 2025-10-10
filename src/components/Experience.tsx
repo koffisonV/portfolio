@@ -34,8 +34,7 @@ const experienceData = [
     role: "Software Engineer Intern",
     duration: "June 2025 – August 2025",
     responsibilities: [
-      "Developed new feature in company’s web application using React, Redux, SQL Server, and C# that allows scientists to customize experiment inputs for a gene editing method on automated liquid handling robots, reducing manual input and automating 60% of scientists' workflows to streamline lab operations.",
-      "In collaboration with mechanical engineers and scientists, we gathered project requirements, refined the UX/UI, and supported iterative testing of the Global Stem Cell Array’s transfection process."
+      "Developed new feature in company’s web application using React, Redux, SQL Server, and C# that allows scientists to customize experiment inputs for a gene editing method on automated liquid handling robots, reducing manual input and automating 60% of scientists' workflows to streamline lab operations—for stem cell research advancement."
     ],
   },
   {
@@ -43,7 +42,7 @@ const experienceData = [
     role: "Mobile Engineer",
     duration: "Jun 2024 - Present",
     responsibilities: [
-      "Developed Vngle’s mobile reporter app—a tool for reporters to capture, annotate, and securely upload photos and videos from the field, with auto-generated metadata, blockchain hash storage, and in-app file compression for mobile devices.", "Improved CMS with optimized media processing for file compression and 50% faster upload speed using node packages, AWS services and SDKs."
+      "Developed Vngle’s mobile reporter app—an authenticity tool that reduced misinformation by 50% and enables reporters to capture, annotate, and securely upload field media with metadata, blockchain-hash storage and media processing for mobile devices."
     ],
   },
   {
@@ -59,7 +58,7 @@ const experienceData = [
     role: "Web Developer",
     duration: "May 2021 - Jul 2022",
     responsibilities: [
-      "Designed and built a WordPress site for a consulting firm, creating a custom landing page, managing plugins, setting up a database for posts, comments, and book catalogs, and installing security tools—while refining UX/UI to boost functionality and user experience."
+      "Designed and developed an engaging landing page aimed at attracting new clients and showcasing the consulting firm’s services. This highlighted the company’s value, strengthened site security and reliability to maintain 99.9% uptime, and managed ongoing updates to ensure accurate content, appealing design, and alignment with business goals."
     ],
   },
 ];
@@ -85,9 +84,9 @@ export default function Experience() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Experience
+            Experiences
           </motion.h2>
-          <div className="space-y-8">
+          <div className="space-y-8 rounded-xl bg-transparent p-6 shadow-[inset_4px_4px_10px_#cfcfcf,inset_-4px_-4px_10px_#ffffff]">
             {experienceData.map((item, index) => (
               <motion.div
                 key={index}

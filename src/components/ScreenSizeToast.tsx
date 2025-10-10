@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const TOAST_DURATION = 4000; // ms
+const TOAST_DURATION = 4000;
 const TOAST_KEY = "hasSeenScreenToast";
 
 const ScreenSizeToast: React.FC = () => {
@@ -9,7 +9,6 @@ const ScreenSizeToast: React.FC = () => {
   const [progress, setProgress] = useState(100);
 
   useEffect(() => {
-    // Only show if not seen before
     const hasSeen = typeof window !== 'undefined' && localStorage.getItem(TOAST_KEY);
     if (!hasSeen) setShow(true);
   }, []);
