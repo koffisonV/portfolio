@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import CustomCursor from "./CustomCursor";
 import useIsLargeScreen from "../hooks/useIsLargeScreen";
 import ScreenSizeToast from "./ScreenSizeToast";
+import { useTheme } from "@/hooks/useTheme";
 
 const SpinningXIcon = () => (
   <motion.div
@@ -66,6 +67,7 @@ const experienceData = [
 export default function Experience() {
   const [hovered] = useState(false);
   const isLargeScreen = useIsLargeScreen();
+  const theme = useTheme();
 
   return (
     <>
@@ -86,7 +88,11 @@ export default function Experience() {
           >
             Experiences
           </motion.h2>
-          <div className="space-y-8 rounded-xl bg-transparent p-6 shadow-[inset_4px_4px_10px_#cfcfcf,inset_-4px_-4px_10px_#ffffff]">
+          <div className={`space-y-8 rounded-xl bg-transparent p-6 shadow-[inset_4px_4px_10px_#cfcfcf,inset_-4px_-4px_10px_#ffffff] 
+            ${theme === "dark"
+              ? "dark:shadow-[inset_4px_4px_10px_#262626,inset_-4px_-4px_10px_#262626]"
+              : ""
+            }`}>
             {experienceData.map((item, index) => (
               <motion.div
                 key={index}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaGithub, FaLinkedin, FaRegFileAlt } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "@/hooks/useTheme";
 
 const name = "Koffison Voumadi";
 
@@ -27,6 +28,7 @@ const ShineEffect = ({ isVisible }: { isVisible: boolean }) => (
 
 export default function AboutMe() {
   const [shineStates, setShineStates] = useState([false, false, false]);
+  const theme = useTheme();
 
   useEffect(() => {
     const triggerRandomShine = () => {
@@ -140,7 +142,7 @@ export default function AboutMe() {
             <FaGithub />
           </a>
           <a
-            href="https://drive.google.com/file/d/1efOEAyNSjxSe_ER8-euT_Y3t78O_NpqU/view?usp=sharing"
+            href="https://drive.google.com/file/d/1PeGuiMpnHLiUqbXsPAs3jpCryyrzQLmM/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="text-2xl hover:text-orange-500 transition-colors"
@@ -155,7 +157,12 @@ export default function AboutMe() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <div className="rounded-xl bg-transparent p-6 shadow-[inset_-4px_-5px_15px_#cfcfcf,inset_4px_4px_10px_#ffffff]">
+          <div className={`rounded-xl bg-transparent p-6 shadow-[inset_-4px_-5px_15px_#cfcfcf,inset_4px_4px_10px_#ffffff]
+            ${
+              theme === "dark"
+                ? "dark:shadow-[inset_-4px_-5px_15px_#262626,inset_4px_4px_10px_#262626]"
+                : ""
+            }`}>
             <motion.h3
               className="text-2xl sm:text-3xl font-bold mt-0 mb-4"
               initial={{ opacity: 0, y: 20 }}
