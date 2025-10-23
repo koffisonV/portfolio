@@ -230,7 +230,7 @@ export default function Projects() {
                 <FaRobot className="h-8 w-8 text-foreground/70 group-hover:text-foreground/90 transition-colors" />
               </div>
               <h4 className="text-sm font-medium group-hover:text-foreground/90 transition-colors">
-                AI Developer Specialist
+                AI Development
               </h4>
               <p className="text-xs text-foreground/70 group-hover:text-foreground/90 transition-colors">
                 IBM

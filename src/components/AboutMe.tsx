@@ -225,16 +225,16 @@ export default function AboutMe() {
             </h3>
             <ul className="list-none font-light text-center space-y-6 sm:space-y-7">
               <li className="text-sm sm:text-base text-foreground/70">
-                AI Developer Specialist
+                Software Development
+              </li>
+              <li className="text-sm sm:text-base text-foreground/70">
+                AI Development
               </li>
               <li className="text-sm sm:text-base text-foreground/70">
                 IT Support Specialist
               </li>
               <li className="text-sm sm:text-base text-foreground/70">
                 Cyber Security
-              </li>
-              <li className="text-sm sm:text-base text-foreground/70">
-                Agile Methodologies
               </li>
             </ul>
           </motion.div>
