@@ -16,6 +16,21 @@ export default function Projects() {
   const theme = useTheme();
   const projects = [
     {
+      title: "Nucleofection Worklist Gen",
+      description:
+        "Automated a critical step in the CRISPR-gene editing workflow for the NYSCF Global Stem Cell Array®. The new feature dynamically generates precise robot instructions to process over 100 cell lines per run, significantly reducing manual error and optimizing the use of multi-use lab hardware to maximize platform efficiency and reduce costs.",
+      technologies: [
+        "React",
+        ".NET",
+        "C#",
+        "SQL Server",
+        "Tailwind CSS",
+      ],
+      image: "images/nyscf.jpg",
+      github: null,
+      external: "https://nyscf.org/",
+    },
+    {
       title: "LaundriFi",
       description:
         "A web-based laundry scheduler that reduces congestion in apartments with limited machines by enabling real-time availability checks and reservations.",
@@ -33,15 +48,6 @@ export default function Projects() {
       external: "https://laundrifi.vercel.app",
     },
     {
-      title: "MyVPN",
-      description:
-        "This exploratory project involves building a self-hosted VPN and using Wireshark to analyze its efficiency compared to commercial VPN protocols like NordVPN.",
-      technologies: ["OpenVPN - protocol", "EC2 server", "Shell Scripting"],
-      image: "images/openvpn.jpg",
-      github: "https://github.com/koffisonV/myvpn",
-      external: "https://youtu.be/xHemKKHjR0s",
-    },
-    {
       title: "Vngle Reporter",
       description:
         "A blockchain media provenance system for reporting and verifying the authenticity of media content among content delivery networks.",
@@ -52,9 +58,18 @@ export default function Projects() {
         "Tailwind CSS",
         "Blockchain API",
       ],
-      image: "images/vngle2.jpg",
+      image: "images/vngle.png",
       github: null,
       external: "https://www.vngle.com/",
+    },
+    {
+      title: "OVPNet",
+      description:
+        "This exploratory project involves building a self-hosted VPN and analyzes its performance and reliability compared to commercial services like NordVPN.",
+      technologies: ["OpenVPN - protocol", "EC2 server", "Shell Scripting"],
+      image: "images/openvpn.jpg",
+      github: "https://github.com/koffisonV/myvpn",
+      external: "https://youtu.be/xHemKKHjR0s",
     },
     {
       title: "Rick and Morty",

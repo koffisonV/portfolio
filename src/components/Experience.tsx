@@ -39,7 +39,7 @@ const experienceData = [
     ],
   },
   {
-    company: "Vngle: The Civic Insight Company 📱",
+    company: "Vngle📱",
     role: "Mobile Engineer",
     duration: "Jun 2024 - Present",
     responsibilities: [
@@ -47,11 +47,11 @@ const experienceData = [
     ],
   },
   {
-    company: "NYC Tech Talent Pipeline 👨🏾‍💻",
-    role: "Full-stack Developer Fellow",
-    duration: "Jun 2023 - Feb 2024",
+    company: "NYC Tech Talent Pipeline Residency 👨🏾‍💻",
+    role: "Full-stack Developer",
+    duration: "Jun 2023 - Feb 2025",
     responsibilities: [
-      "Completed bootcamps in full-stack development and cybersecurity, building a single web app for a capstone project using React, Express.js, PostgreSQL, REST API, and a self-hosted VPN using AWS EC2."
+      "Successfully built and deployed production-ready PERN (PostgreSQL, Express.js, React, Node.js) Stack applications, and integrated third-party APIs aimed at building a strong foundation in Full Stack development. Selected among 30 of 500+ candidates for a year-plus full-stack and cybersecurity residency, gaining hands-on experience through real-world projects and mentorship from experienced industry professionals."
     ],
   },
   {
@@ -59,7 +59,7 @@ const experienceData = [
     role: "Web Developer",
     duration: "May 2021 - Jul 2022",
     responsibilities: [
-      "Designed and developed an engaging landing page aimed at attracting new clients and showcasing the consulting firm’s services. This highlighted the company’s value, strengthened site security and reliability to maintain 99.9% uptime, and managed ongoing updates to ensure accurate content, appealing design, and alignment with business goals."
+      "Led the design, development and deployment of a client-acquisition landing page, ensuring 99.9% uptime through enhanced security and reliability. Managed continuous content and design updates to drive alignment with core business goals and user engagement."
     ],
   },
 ];
