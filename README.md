@@ -1,1 +1,1 @@
-This portfolio emcompasses my work experiences and skills as a software engineer, AI developer, and cybersecurity specialist. It is a personal project that showcases my skills and experiences, and I hope it inspires others to pursue their own passions and goals.
+This portfolio encompasses my work experiences and skills as a software engineer, AI developer, and cybersecurity specialist. It is a personal project that showcases my skills and experiences, and I hope it inspires others to pursue their own passions and goals.

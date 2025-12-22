@@ -19,16 +19,25 @@ export default function Projects() {
       title: "Nucleofection Worklist Gen",
       description:
         "Automated a critical step in the CRISPR-gene editing workflow for the NYSCF Global Stem Cell Array®. The new feature dynamically generates precise robot instructions to process over 100 cell lines per run, significantly reducing manual error and optimizing the use of multi-use lab hardware to maximize platform efficiency and reduce costs.",
-      technologies: [
-        "React",
-        ".NET",
-        "C#",
-        "SQL Server",
-        "Tailwind CSS",
-      ],
+      technologies: ["React", ".NET", "C#", "SQL Server", "Tailwind CSS"],
       image: "images/nyscf.jpg",
       github: null,
       external: "https://nyscf.org/",
+    },
+    {
+      title: "Vngle Reporter",
+      description:
+        "A blockchain media provenance system for reporting and verifying the authenticity of media content among content delivery networks.",
+      technologies: [
+        "React native",
+        "AWS",
+        "Expo.js",
+        "Tailwind CSS",
+        "Blockchain API",
+      ],
+      image: "images/vngle.png",
+      github: null,
+      external: "https://www.vngle.com/",
     },
     {
       title: "LaundriFi",
@@ -46,21 +55,6 @@ export default function Projects() {
       image: "images/laundrifi.jpg",
       github: "https://github.com/koffisonV/laundrifi",
       external: "https://laundrifi.vercel.app",
-    },
-    {
-      title: "Vngle Reporter",
-      description:
-        "A blockchain media provenance system for reporting and verifying the authenticity of media content among content delivery networks.",
-      technologies: [
-        "React native",
-        "AWS",
-        "Expo.js",
-        "Tailwind CSS",
-        "Blockchain API",
-      ],
-      image: "images/vngle.png",
-      github: null,
-      external: "https://www.vngle.com/",
     },
     {
       title: "OVPNet",
