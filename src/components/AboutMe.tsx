@@ -157,12 +157,14 @@ export default function AboutMe() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <div className={`rounded-xl bg-transparent p-6 shadow-[inset_-4px_-5px_15px_#cfcfcf,inset_4px_4px_10px_#ffffff]
+          <div
+            className={`rounded-xl bg-transparent p-6 shadow-[inset_-4px_-5px_15px_#cfcfcf,inset_4px_4px_10px_#ffffff]
             ${
               theme === "dark"
                 ? "dark:shadow-[inset_-4px_-5px_15px_#262626,inset_4px_4px_10px_#262626]"
                 : ""
-            }`}>
+            }`}
+          >
             <motion.h3
               className="text-2xl sm:text-3xl font-bold mt-0 mb-4"
               initial={{ opacity: 0, y: 20 }}
@@ -178,10 +180,18 @@ export default function AboutMe() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              A tech enthusiast driven by curiosity and a commitment to solving
-              real-world problems across industries—from media and biotech to
-              consulting and beyond. My mission is to engineer solutions where
-              technology, intelligence, and security converge.
+              I am driven by the challenge of using technology to solve
+              real-world problems across industries—from media, biotech,
+              consulting and beyond. My work bridges software engineering,
+              cybersecurity, AI, and IT systems to create tools that are both
+              secure and impactful. I thrive on turning complex ideas into
+              practical, user-focused solutions, constantly exploring new
+              technologies, ideologies, and perspectives to push the boundaries
+              of innovation and bring meaningful change through code. I
+              currently hold a B.S. in Computer Science and Information
+              Security, experienced in Full-Stack Web and Mobile Development,
+              and proficient with AWS, React, Postgres, CI/CD, microservices,
+              and Git, all within Agile frameworks for project management.
             </motion.p>
           </div>
         </motion.div>

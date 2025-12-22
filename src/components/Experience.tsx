@@ -9,18 +9,18 @@ const SpinningXIcon = () => (
   <motion.div
     className="w-6 h-6 flex items-center justify-center"
     animate={{ rotate: 360 }}
-    transition={{ 
-      duration: 3, 
-      ease: "linear", 
-      repeat: Infinity 
+    transition={{
+      duration: 3,
+      ease: "linear",
+      repeat: Infinity,
     }}
   >
-    <svg 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="4" 
-      strokeLinecap="round" 
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="4"
+      strokeLinecap="round"
       strokeLinejoin="round"
       className="w-full h-full"
     >
@@ -35,7 +35,7 @@ const experienceData = [
     role: "Software Engineer Intern",
     duration: "June 2025 – August 2025",
     responsibilities: [
-      "Developed new feature in company’s web application using React, Redux, SQL Server, and C# that allows scientists to customize experiment inputs for a gene editing method on automated liquid handling robots, reducing manual input and automating 60% of scientists' workflows to streamline lab operations—for stem cell research advancement."
+      "Optimized gene editing inputs and automated 60% of scientists' workflows to streamline lab operations by developing and implementing laboratory web features using React, Redux, and C#, allowing scientists to customize experiment settings on automated liquid handling robots.",
     ],
   },
   {
@@ -43,7 +43,7 @@ const experienceData = [
     role: "Mobile Engineer",
     duration: "Jun 2024 - Present",
     responsibilities: [
-      "Developed Vngle’s mobile reporter app—an authenticity tool that reduced misinformation by 50% and enables reporters to capture, annotate, and securely upload field media with metadata, blockchain-hash storage and media processing for mobile devices."
+      "Developed VngleReporters—a media provenance tool to track origin of digital content, reducing misinformation by 50% and enabling reporters to capture, annotate, and upload media with metadata, blockchain contracts and media processing between mobile devices and content management systems.",
     ],
   },
   {
@@ -51,7 +51,7 @@ const experienceData = [
     role: "Full-stack Developer",
     duration: "Jun 2023 - Feb 2025",
     responsibilities: [
-      "Successfully built and deployed production-ready PERN (PostgreSQL, Express.js, React, Node.js) Stack applications, and integrated third-party APIs aimed at building a strong foundation in Full Stack development. Selected among 30 of 500+ candidates for a year-plus full-stack and cybersecurity residency, gaining hands-on experience through real-world projects and mentorship from experienced industry professionals."
+      "Successfully built and deployed production-ready PERN (PostgreSQL, Express.js, React, Node.js) Stack applications, and optimized consumption of high-traffic third-party APIs, reducing redundant  requests and handling 100+ user requests/sec. Selected among 30 of 500+ candidates for a year-plus full-stack and cybersecurity residency, gaining hands-on experience through real-world projects and mentorship from experienced industry professionals.",
     ],
   },
   {
@@ -59,7 +59,7 @@ const experienceData = [
     role: "Web Developer",
     duration: "May 2021 - Jul 2022",
     responsibilities: [
-      "Led the design, development and deployment of a client-acquisition landing page, ensuring 99.9% uptime through enhanced security and reliability. Managed continuous content and design updates to drive alignment with core business goals and user engagement."
+      "Led the development and deployment of a client-acquisition landing page, ensuring 99.9% uptime through enhanced security and reliability. Managed continuous content and design updates to drive alignment with core business goals and user engagement.",
     ],
   },
 ];
@@ -88,11 +88,14 @@ export default function Experience() {
           >
             Experiences
           </motion.h2>
-          <div className={`space-y-8 rounded-xl bg-transparent p-6 shadow-[inset_4px_4px_10px_#cfcfcf,inset_-4px_-4px_10px_#ffffff] 
-            ${theme === "dark"
-              ? "dark:shadow-[inset_4px_4px_10px_#262626,inset_-4px_-4px_10px_#262626]"
-              : ""
-            }`}>
+          <div
+            className={`space-y-8 rounded-xl bg-transparent p-6 shadow-[inset_4px_4px_10px_#cfcfcf,inset_-4px_-4px_10px_#ffffff] 
+            ${
+              theme === "dark"
+                ? "dark:shadow-[inset_4px_4px_10px_#262626,inset_-4px_-4px_10px_#262626]"
+                : ""
+            }`}
+          >
             {experienceData.map((item, index) => (
               <motion.div
                 key={index}
