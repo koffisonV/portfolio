@@ -43,7 +43,7 @@ const experienceData = [
     role: "Mobile Engineer",
     duration: "Jun 2024 - Present",
     responsibilities: [
-      "Developed VngleReporters—a media provenance tool to track origin of digital content, reducing misinformation by 50% and enabling reporters to capture, annotate, and upload media with metadata, blockchain contracts and media processing between mobile devices and content management systems.",
+      "Developed VngleReporters—a media provenance tool to track origin of digital content, reducing misinformation by 50% and enabling reporters to capture, annotate, and upload medias with metadata, blockchain contracts receipt and media processing pipeline between reporters' devices and content management systems.",
     ],
   },
   {
