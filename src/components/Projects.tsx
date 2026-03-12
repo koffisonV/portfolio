@@ -62,7 +62,7 @@ export default function Projects() {
         "This exploratory project involves building a self-hosted VPN and analyzes its performance and reliability compared to commercial services like NordVPN.",
       technologies: ["OpenVPN - protocol", "EC2 server", "Shell Scripting"],
       image: "images/openvpn.jpg",
-      github: "https://github.com/koffisonV/myvpn",
+      github: "https://github.com/koffisonV/ovpnet",
       external: "https://youtu.be/xHemKKHjR0s",
     },
     {
