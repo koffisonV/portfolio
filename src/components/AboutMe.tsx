@@ -98,7 +98,7 @@ export default function AboutMe() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          Full Stack Software Developer
+          Full-Stack Software Developer
         </motion.span>
         <motion.p
           className="text-sm opacity-70"
@@ -158,10 +158,10 @@ export default function AboutMe() {
           transition={{ duration: 0.5, delay: 0.5 }}
         >
           <div
-            className={`rounded-xl bg-transparent p-6 shadow-[inset_-4px_-5px_15px_#cfcfcf,inset_4px_4px_10px_#ffffff]
+            className={`rounded-xl bg-transparent p-4 shadow-[inset_-4px_-5px_15px_#F0F0F0]
             ${
               theme === "dark"
-                ? "dark:shadow-[inset_-4px_-5px_15px_#262626,inset_4px_4px_10px_#262626]"
+                ? "dark:shadow-[inset_-4px_-5px_15px_#262626]"
                 : ""
             }`}
           >

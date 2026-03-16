@@ -31,14 +31,6 @@ const SpinningXIcon = () => (
 
 const experienceData = [
   {
-    company: "The New York Stem Cell Foundation 🦠",
-    role: "Software Engineer Intern",
-    duration: "June 2025 – August 2025",
-    responsibilities: [
-      "Optimized gene editing inputs and automated 60% of scientists' workflows to streamline lab operations by developing and implementing laboratory web features using React, Redux, and C#, allowing scientists to customize experiment settings on automated liquid handling robots.",
-    ],
-  },
-  {
     company: "Vngle📱",
     role: "Mobile Engineer",
     duration: "Jun 2024 - Present",
@@ -47,8 +39,16 @@ const experienceData = [
     ],
   },
   {
-    company: "NYC Tech Talent Pipeline Residency 👨🏾‍💻",
-    role: "Full-stack Developer",
+    company: "The New York Stem Cell Foundation 🦠",
+    role: "Software Engineer Intern",
+    duration: "June 2025 – August 2025",
+    responsibilities: [
+      "Optimized gene editing inputs and automated 60% of scientists' workflows to streamline lab operations by developing and implementing laboratory web features using React, Redux, and C#, allowing scientists to customize experiment settings on automated liquid handling robots.",
+    ],
+  },
+  {
+    company: "NYC Tech Talent Pipeline 👨🏾‍💻",
+    role: "Full-Stack Developer Residency",
     duration: "Jun 2023 - Feb 2025",
     responsibilities: [
       "Successfully built and deployed production-ready PERN (PostgreSQL, Express.js, React, Node.js) Stack applications, and optimized consumption of high-traffic third-party APIs, reducing redundant  requests and handling 100+ user requests/sec. Selected among 30 of 500+ candidates for a year-plus full-stack and cybersecurity residency, gaining hands-on experience through real-world projects and mentorship from experienced industry professionals.",
@@ -120,7 +120,7 @@ export default function Experience() {
                     </p>
                   </div>
                   <ul className="space-y-3">
-                    {item.responsibilities.map((responsibility, idx) => (
+                    {item.responsibilities?.map((responsibility, idx) => (
                       <motion.li
                         key={idx}
                         className="text-sm sm:text-base text-foreground/70 leading-relaxed pl-4 relative"
