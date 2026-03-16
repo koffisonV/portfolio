@@ -16,7 +16,7 @@ const inconsolata = Inconsolata({
 });
 
 export const metadata: Metadata = {
-  title: "Koffison Voumadi",
+  title: "Koffison Voumadi - Portfolio",
   description: "This is my portfolio",
 };
 
