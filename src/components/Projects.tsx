@@ -40,6 +40,22 @@ export default function Projects() {
       external: "https://www.vngle.com/",
     },
     {
+      title: "NoteApp",
+      description:
+        "A web-based note-taking app that lets users create and edit rich-text notes with automatic saving, search, filtered tags, and seamless access across multiple devices.",
+      technologies: [
+        "Vite",
+        "Amplify",
+        "DynamoDB",
+        "API Gateway",
+        "Lambda",
+        "Tailwind CSS",
+      ],
+      image: "images/note-app.png",
+      github: "https://github.com/koffisonV/note-app",
+      external: "https://main.d32cz6ko1e9pr4.amplifyapp.com/dashboard",
+    },
+    {
       title: "LaundriFi",
       description:
         "A web-based laundry scheduler that reduces congestion in apartments with limited machines by enabling real-time availability checks and reservations.",
@@ -50,9 +66,9 @@ export default function Projects() {
         "Postgres",
         "Tailwind CSS",
         "Restful API",
-        "CronJob",
+        "Bash scripts",
       ],
-      image: "images/laundrifi.jpg",
+      image: "images/laundrifi.png",
       github: "https://github.com/koffisonV/laundrifi",
       external: "https://laundrifi.vercel.app",
     },
@@ -60,7 +76,7 @@ export default function Projects() {
       title: "OVPNet",
       description:
         "This exploratory project involves building a self-hosted VPN and analyzes its performance and reliability compared to commercial services like NordVPN.",
-      technologies: ["OpenVPN - protocol", "EC2 server", "Shell Scripting"],
+      technologies: ["OpenVPN - protocol", "EC2 server", "Bash scripts"],
       image: "images/openvpn.jpg",
       github: "https://github.com/koffisonV/ovpnet",
       external: "https://youtu.be/xHemKKHjR0s",
