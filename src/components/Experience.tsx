@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import CustomCursor from "./CustomCursor";
 import useIsLargeScreen from "../hooks/useIsLargeScreen";
-import ScreenSizeToast from "./ScreenSizeToast";
 import { useTheme } from "@/hooks/useTheme";
 
 const SpinningXIcon = () => (
@@ -31,15 +30,15 @@ const SpinningXIcon = () => (
 
 const experienceData = [
   {
-    company: "Vngle📱",
-    role: "Mobile Engineer",
+    company: "Vngle",
+    role: "Software Engineer",
     duration: "Jun 2024 - Present",
     responsibilities: [
       "Developed VngleReporters—a media provenance tool to track origin of digital content, reducing misinformation by 50% and enabling reporters to capture, annotate, and upload medias with metadata, blockchain contracts receipt and media processing pipeline between reporters' devices and content management systems.",
     ],
   },
   {
-    company: "The New York Stem Cell Foundation 🦠",
+    company: "The New York Stem Cell Foundation",
     role: "Software Engineer Intern",
     duration: "June 2025 – August 2025",
     responsibilities: [
@@ -47,7 +46,7 @@ const experienceData = [
     ],
   },
   {
-    company: "NYC Tech Talent Pipeline 👨🏾‍💻",
+    company: "NYC Tech Talent Pipeline",
     role: "Full-Stack Developer Residency",
     duration: "Jun 2023 - Feb 2025",
     responsibilities: [
@@ -55,7 +54,7 @@ const experienceData = [
     ],
   },
   {
-    company: "RecProf 👔",
+    company: "RecProf",
     role: "Web Developer",
     duration: "May 2021 - Jul 2022",
     responsibilities: [
@@ -72,11 +71,9 @@ export default function Experience() {
   return (
     <>
       {isLargeScreen && <CustomCursor hovered={hovered} />}
-      {!isLargeScreen && <ScreenSizeToast />}
       <section
         id="experience"
         className="min-h-screen flex items-center justify-center p-4 sm:p-8"
-        // style={isLargeScreen ? { cursor: "none" } : {}}
       >
         <div className="max-w-4xl w-full">
           <motion.h2
