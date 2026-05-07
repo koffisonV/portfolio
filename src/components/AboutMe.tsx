@@ -114,7 +114,7 @@ export default function AboutMe() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          📍 New York, NY
+          New York, NY
         </motion.p>
 
         <motion.div
@@ -127,7 +127,7 @@ export default function AboutMe() {
             href="https://www.linkedin.com/in/koffison-voumadi/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-2xl hover:text-blue-400 transition-colors"
+            className="text-2xl hover:text-gray-400 transition-colors"
             title="View LinkedIn"
           >
             <FaLinkedin />
@@ -145,7 +145,7 @@ export default function AboutMe() {
             href="https://drive.google.com/file/d/1PeGuiMpnHLiUqbXsPAs3jpCryyrzQLmM/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-2xl hover:text-orange-500 transition-colors"
+            className="text-2xl hover:text-gray-400 transition-colors"
             title="View Resume"
           >
             <FaRegFileAlt />

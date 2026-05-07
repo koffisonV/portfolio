@@ -40,22 +40,6 @@ export default function Projects() {
       external: "https://www.vngle.com/",
     },
     {
-      title: "NoteApp",
-      description:
-        "A web-based note-taking app that lets users create and edit rich-text notes with automatic saving, search, filtered tags, and seamless access across multiple devices.",
-      technologies: [
-        "Vite",
-        "Amplify",
-        "DynamoDB",
-        "API Gateway",
-        "Lambda",
-        "Tailwind CSS",
-      ],
-      image: "images/note-app.png",
-      github: "https://github.com/koffisonV/note-app",
-      external: "https://main.d32cz6ko1e9pr4.amplifyapp.com/dashboard",
-    },
-    {
       title: "LaundriFi",
       description:
         "A web-based laundry scheduler that reduces congestion in apartments with limited machines by enabling real-time availability checks and reservations.",
@@ -80,6 +64,22 @@ export default function Projects() {
       image: "images/openvpn.jpg",
       github: "https://github.com/koffisonV/ovpnet",
       external: "https://youtu.be/xHemKKHjR0s",
+    },
+    {
+      title: "NoteApp",
+      description:
+        "A web-based note-taking app that lets users create and edit rich-text notes with automatic saving, search, filtered tags, and seamless access across multiple devices.",
+      technologies: [
+        "Vite",
+        "Amplify",
+        "DynamoDB",
+        "API Gateway",
+        "Lambda",
+        "Tailwind CSS",
+      ],
+      image: "images/note-app.png",
+      github: "https://github.com/koffisonV/note-app",
+      external: "https://main.d32cz6ko1e9pr4.amplifyapp.com/dashboard",
     },
     {
       title: "Rick and Morty",
