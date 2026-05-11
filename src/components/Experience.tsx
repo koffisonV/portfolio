@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import CustomCursor from "./CustomCursor";
-import useIsLargeScreen from "../hooks/useIsLargeScreen";
 import { useTheme } from "@/hooks/useTheme";
 
 const SpinningXIcon = () => (
@@ -64,13 +62,10 @@ const experienceData = [
 ];
 
 export default function Experience() {
-  const [hovered] = useState(false);
-  const isLargeScreen = useIsLargeScreen();
   const theme = useTheme();
 
   return (
     <>
-      {isLargeScreen && <CustomCursor hovered={hovered} />}
       <section
         id="experience"
         className="min-h-screen flex items-center justify-center p-4 sm:p-8"
