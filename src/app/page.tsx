@@ -7,39 +7,51 @@ import Contact from "@/components/Contact";
 import Projects from "@/components/Projects";
 import NavBar from "@/components/NavBar";
 import ThemeToggle from "@/components/ThemeToggle";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<'about' | 'experience' | 'projects' | 'contact'>('about');
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['about', 'experience', 'projects', 'contact'];
-      const currentSection = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
-        }
-        return false;
-      });
+    let rafId: number | null = null;
 
-      if (currentSection) {
-        setActiveSection(currentSection as 'about' | 'experience' | 'projects' | 'contact');
-      }
+    const handleScroll = () => {
+      if (rafId !== null) return;
+      rafId = requestAnimationFrame(() => {
+        rafId = null;
+        const sections = ['about', 'experience', 'projects', 'contact'];
+        const currentSection = sections.find(section => {
+          const element = document.getElementById(section);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            return rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
+          }
+          return false;
+        });
+
+        if (currentSection) {
+          setActiveSection(currentSection as 'about' | 'experience' | 'projects' | 'contact');
+        }
+      });
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
-    <main className="w-full">
-      <ThemeToggle />
-      <AboutMe />
-      <Experience />
-      <Projects />
-      <Contact />
-      <NavBar activeSection={activeSection} onSectionChange={setActiveSection} />
-    </main>
+    <ThemeProvider>
+      <main className="w-full">
+        <ThemeToggle />
+        <AboutMe />
+        <Experience />
+        <Projects />
+        <Contact />
+        <NavBar activeSection={activeSection} onSectionChange={setActiveSection} />
+      </main>
+    </ThemeProvider>
   );
 }

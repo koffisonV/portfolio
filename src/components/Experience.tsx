@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "@/hooks/useTheme";
+import { EXPERIENCE_DATA } from "@/constants";
 
 const SpinningXIcon = () => (
   <motion.div
@@ -26,41 +27,6 @@ const SpinningXIcon = () => (
   </motion.div>
 );
 
-const experienceData = [
-  {
-    company: "Vngle",
-    role: "Software Engineer",
-    duration: "Jun 2024 - Present",
-    responsibilities: [
-      "Developed VngleReporters—a media provenance tool to track origin of digital content, reducing misinformation by 50% and enabling reporters to capture, annotate, and upload medias with metadata, blockchain contracts receipt and media processing pipeline between reporters' devices and content management systems.",
-    ],
-  },
-  {
-    company: "The New York Stem Cell Foundation",
-    role: "Software Engineer Intern",
-    duration: "June 2025 – August 2025",
-    responsibilities: [
-      "Optimized gene editing inputs and automated 60% of scientists' workflows to streamline lab operations by developing and implementing laboratory web features using React, Redux, and C#, allowing scientists to customize experiment settings on automated liquid handling robots.",
-    ],
-  },
-  {
-    company: "NYC Tech Talent Pipeline",
-    role: "Full-Stack Developer Residency",
-    duration: "Jun 2023 - Feb 2025",
-    responsibilities: [
-      "Successfully built and deployed production-ready PERN (PostgreSQL, Express.js, React, Node.js) Stack applications, and optimized consumption of high-traffic third-party APIs, reducing redundant  requests and handling 100+ user requests/sec. Selected among 30 of 500+ candidates for a year-plus full-stack and cybersecurity residency, gaining hands-on experience through real-world projects and mentorship from experienced industry professionals.",
-    ],
-  },
-  {
-    company: "RecProf",
-    role: "Web Developer",
-    duration: "May 2021 - Jul 2022",
-    responsibilities: [
-      "Led the development and deployment of a client-acquisition landing page, ensuring 99.9% uptime through enhanced security and reliability. Managed continuous content and design updates to drive alignment with core business goals and user engagement.",
-    ],
-  },
-];
-
 export default function Experience() {
   const theme = useTheme();
 
@@ -82,13 +48,12 @@ export default function Experience() {
           </motion.h2>
           <div
             className={`space-y-8 rounded-xl bg-transparent p-6 shadow-[inset_4px_4px_10px_#cfcfcf,inset_-4px_-4px_10px_#ffffff] 
-            ${
-              theme === "dark"
+            ${theme === "dark"
                 ? "dark:shadow-[inset_4px_4px_10px_#262626,inset_-4px_-4px_10px_#262626]"
                 : ""
-            }`}
+              }`}
           >
-            {experienceData.map((item, index) => (
+            {EXPERIENCE_DATA.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
