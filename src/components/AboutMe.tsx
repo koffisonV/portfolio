@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaGithub, FaLinkedin, FaRegFileAlt } from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion";
-import { useTheme } from "@/hooks/useTheme";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { useTheme } from "@/context/ThemeContext";
 
 const name = "Koffison Voumadi";
 
@@ -29,33 +29,39 @@ const ShineEffect = ({ isVisible }: { isVisible: boolean }) => (
 export default function AboutMe() {
   const [shineStates, setShineStates] = useState([false, false, false]);
   const theme = useTheme();
+  const prefersReducedMotion = useReducedMotion();
+
+  const shineTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    const triggerRandomShine = () => {
-      const randomCard = Math.floor(Math.random() * 3);
-      setShineStates((prev) => {
-        const newStates = [...prev];
-        newStates[randomCard] = true;
-        return newStates;
-      });
+    if (prefersReducedMotion) return;
 
-      setTimeout(() => {
+    const scheduleNext = (delay: number) => {
+      shineTimerRef.current = setTimeout(() => {
+        const randomCard = Math.floor(Math.random() * 3);
         setShineStates((prev) => {
-          const newStates = [...prev];
-          newStates[randomCard] = false;
-          return newStates;
+          const next = [...prev];
+          next[randomCard] = true;
+          return next;
         });
-      }, 1000);
 
-      const nextDelay = Math.random() * 3000 + 2000; // 2-5 seconds
-      setTimeout(triggerRandomShine, nextDelay);
+        shineTimerRef.current = setTimeout(() => {
+          setShineStates((prev) => {
+            const next = [...prev];
+            next[randomCard] = false;
+            return next;
+          });
+          scheduleNext(Math.random() * 3000 + 2000);
+        }, 1000);
+      }, delay);
     };
 
-    const initialDelay = Math.random() * 2000 + 1000; // 1-3 seconds initial delay
-    const timer = setTimeout(triggerRandomShine, initialDelay);
+    scheduleNext(Math.random() * 2000 + 1000);
 
-    return () => clearTimeout(timer);
-  }, []);
+    return () => {
+      if (shineTimerRef.current !== null) clearTimeout(shineTimerRef.current);
+    };
+  }, [prefersReducedMotion]);
 
   return (
     <section
@@ -159,11 +165,10 @@ export default function AboutMe() {
         >
           <div
             className={`rounded-xl bg-transparent p-4 shadow-[inset_-4px_-5px_15px_#F0F0F0]
-            ${
-              theme === "dark"
+            ${theme === "dark"
                 ? "dark:shadow-[inset_-4px_-5px_15px_#262626]"
                 : ""
-            }`}
+              }`}
           >
             <motion.h3
               className="text-2xl sm:text-3xl font-bold mt-0 mb-4"
@@ -204,8 +209,7 @@ export default function AboutMe() {
         >
           <motion.div
             className="flex-1 p-4 sm:p-6 rounded-lg bg-[var(--box-background)] text-[var(--box-foreground)] relative overflow-hidden"
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            {...(prefersReducedMotion ? {} : { whileHover: { scale: 1.02 }, transition: { type: "spring", stiffness: 300 } })}
           >
             <ShineEffect isVisible={shineStates[0]} />
             <h3 className="text-lg sm:text-xl font-bold mb-3 text-center">
@@ -216,18 +220,17 @@ export default function AboutMe() {
                 Automated 60% of gene editing workflow for stem cell research
               </li>
               <li className="text-sm sm:text-base text-foreground/70">
-                Built a mobile app that reduced misinformation by 50%
+                Built a system for civicwire insights reducing misinformation by 50%
               </li>
               <li className="text-sm sm:text-base text-foreground/70">
-                Deployed landing page that boosted client acquisition
+                Built multi-role health diagnostics portal with end-to-end test kit management
               </li>
             </ul>
           </motion.div>
 
           <motion.div
             className="flex-1 p-4 sm:p-6 rounded-lg bg-[var(--box-background)] text-[var(--box-foreground)] relative overflow-hidden"
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            {...(prefersReducedMotion ? {} : { whileHover: { scale: 1.02 }, transition: { type: "spring", stiffness: 300 } })}
           >
             <ShineEffect isVisible={shineStates[1]} />
             <h3 className="text-lg text-center sm:text-xl font-semibold mb-3">
@@ -251,8 +254,7 @@ export default function AboutMe() {
 
           <motion.div
             className="flex-1 p-4 sm:p-6 rounded-lg bg-[var(--box-background)] text-[var(--box-foreground)] relative overflow-hidden"
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            {...(prefersReducedMotion ? {} : { whileHover: { scale: 1.02 }, transition: { type: "spring", stiffness: 300 } })}
           >
             <ShineEffect isVisible={shineStates[2]} />
             <h3 className="text-lg text-center sm:text-xl font-semibold mb-3">
