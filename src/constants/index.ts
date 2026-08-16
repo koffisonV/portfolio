@@ -26,7 +26,7 @@ export const PROJECTS = [
   {
     title: "Car Telemetry Platform",
     description:
-      "A real-time vehicle diagnostics system that simulates and decodes live engine data — RPM, speed, coolant temperature, and fault codes — and streams it to a web dashboard, mirroring the tools used by mechanics and automotive engineers.",
+      "A real-time vehicle diagnostics system that simulates and decodes live engine data: RPM, speed, coolant temperature, and fault codes and streams it to a dashboard, mirroring the tools used by mechanics and automotive engineers.",
     technologies: [
       "React",
       "C++",
@@ -85,7 +85,7 @@ export const PROJECTS = [
   {
     title: "Rick and Morty",
     description:
-      "An interactive web application that delves into the fantastic world of the beloved TV series, Rick and Morty—Made Possible using the Rick and Morty API.",
+      "An interactive web application that delves into the fantastic world of the beloved TV series, Rick and Morty using an API.",
     technologies: ["React", "RESTful API", "Tailwind CSS"],
     image: "/images/rickandmorty.webm",
     github: "https://github.com/koffisonV/rickandmortywiki",
