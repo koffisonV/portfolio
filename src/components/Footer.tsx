@@ -14,7 +14,7 @@ export default function Footer() {
             href="https://github.com/koffisonV"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-foreground/60 hover:text-foreground transition-colors"
+            className="text-foreground/60 hover:text-[var(--accent)] transition-colors"
           >
             GitHub
           </a>
@@ -22,7 +22,7 @@ export default function Footer() {
             href="https://www.linkedin.com/in/koffison-voumadi/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-foreground/60 hover:text-foreground transition-colors"
+            className="text-foreground/60 hover:text-[var(--accent)] transition-colors"
           >
             LinkedIn
           </a>
