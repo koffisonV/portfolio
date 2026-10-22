@@ -126,7 +126,7 @@ export const EXPERIENCE_DATA = [
     role: "Software Engineer",
     duration: "Jun 2024 - Present",
     responsibilities: [
-      "Developed VngleReporters—a media provenance tool to track origin of digital content, reducing misinformation by 50% and enabling reporters to capture, annotate, and upload medias with metadata, blockchain contracts receipt and media processing pipeline between reporters' devices and content management systems.",
+      "Built Vngle's media verification and provenance platform, reducing insight delivery time by 50% and securing digital authenticity across 10+ partner organizations. Engineered automated media-processing pipelines (AWS MediaConvert/SQS) and blockchain provenance tracking to deliver validated field media seamlessly to global CMS platforms.",
     ],
   },
   {
@@ -134,13 +134,13 @@ export const EXPERIENCE_DATA = [
     role: "Full-Stack Software Engineer",
     duration: "May 2026 - August 2026",
     responsibilities: [
-      "Built a full-stack health diagnostics platform for at-home microbiome and metabolic testing, supporting gestational diabetes, gut health and more. Delivered role-based dashboards for patients, clinic providers, and internal admins, with end-to-end test lifecycle management from kit activation through results delivery. Developed a dynamic clinical requisition workflow for providers, implemented a role-based notification system across the testing journey, and enabled provider inventory management and analytics.",
+      "Built a full-stack health diagnostics platform for at-home microbiome and metabolic testing, digitizing the end-to-end test lifecycle across patient, provider, and admin portals. Engineered dynamic clinical requisition workflows, automated notification systems, and provider analytics to streamline test ordering, inventory management, and results delivery.",
     ],
   },
   {
     company: "The New York Stem Cell Foundation",
     role: "Software Engineer Intern",
-    duration: "June 2025 – August 2025",
+    duration: "June 2025 - August 2025",
     responsibilities: [
       "Optimized gene editing inputs and automated 60% of scientists' workflows to streamline lab operations by developing and implementing laboratory web features using React, Redux, and C#, allowing scientists to customize experiment settings on automated liquid handling robots.",
     ],
@@ -148,9 +148,9 @@ export const EXPERIENCE_DATA = [
   {
     company: "NYC Tech Talent Pipeline",
     role: "Full-Stack Developer Residency",
-    duration: "Jun 2023 - Feb 2025",
+    duration: "Jun 2023 - May 2024",
     responsibilities: [
-      "Successfully built and deployed production-ready PERN (PostgreSQL, Express.js, React, Node.js) Stack applications, and optimized consumption of high-traffic third-party APIs, reducing redundant  requests and handling 100+ user requests/sec. Selected among 30 of 500+ candidates for a year-plus full-stack and cybersecurity residency, gaining hands-on experience through real-world projects and mentorship from experienced industry professionals.",
+      "Successfully built and deployed production-ready applications and optimized consumption of high-traffic third-party APIs, reducing redundant  requests and handling 100+ user requests/sec. Selected among 30 of 500 candidates for a full-stack development and cybersecurity residency, gaining hands-on experience through real-world projects and mentorship from experienced industry professionals.",
     ],
   },
   {

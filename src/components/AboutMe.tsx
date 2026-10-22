@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaGithub, FaLinkedin, FaRegFileAlt } from "react-icons/fa";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { useTheme } from "@/context/ThemeContext";
 
-const name = "Koffison Voumadi";
+const name = "{ Koffison Voumadi }";
 
 const ShineEffect = ({ isVisible }: { isVisible: boolean }) => (
   <AnimatePresence>
@@ -28,7 +27,6 @@ const ShineEffect = ({ isVisible }: { isVisible: boolean }) => (
 
 export default function AboutMe() {
   const [shineStates, setShineStates] = useState([false, false, false]);
-  const theme = useTheme();
   const prefersReducedMotion = useReducedMotion();
 
   const shineTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -133,7 +131,7 @@ export default function AboutMe() {
             href="https://www.linkedin.com/in/koffison-voumadi/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-2xl hover:text-gray-400 transition-colors"
+            className="text-2xl hover:text-[var(--accent)] transition-colors"
             title="View LinkedIn"
           >
             <FaLinkedin />
@@ -142,7 +140,7 @@ export default function AboutMe() {
             href="https://github.com/koffisonV"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-2xl hover:text-gray-400 transition-colors"
+            className="text-2xl hover:text-[var(--accent)] transition-colors"
             title="View GitHub"
           >
             <FaGithub />
@@ -151,7 +149,7 @@ export default function AboutMe() {
             href="https://drive.google.com/file/d/1PeGuiMpnHLiUqbXsPAs3jpCryyrzQLmM/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-2xl hover:text-gray-400 transition-colors"
+            className="text-2xl hover:text-[var(--accent)] transition-colors"
             title="View Resume"
           >
             <FaRegFileAlt />
@@ -163,42 +161,33 @@ export default function AboutMe() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <div
-            className={`rounded-xl bg-transparent p-4 shadow-[inset_-4px_-5px_15px_#F0F0F0]
-            ${theme === "dark"
-                ? "dark:shadow-[inset_-4px_-5px_15px_#262626]"
-                : ""
-              }`}
+          <motion.h3
+            className="text-2xl sm:text-3xl font-bold leading-[1.1] mt-0 mb-5"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.55 }}
           >
-            <motion.h3
-              className="text-2xl sm:text-3xl font-bold mt-0 mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-            >
-              About Me
-            </motion.h3>
+            About Me
+          </motion.h3>
 
-            <motion.p
-              className="text-sm sm:text-base text-foreground/70 leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-            >
-              I am driven by the challenge of using technology to solve
-              real-world problems across industries—from media, biotech,
-              consulting and beyond. My work bridges software engineering,
-              cybersecurity, AI, and IT systems to create tools that are both
-              secure and impactful. I thrive on turning complex ideas into
-              practical, user-focused solutions, constantly exploring new
-              technologies, ideologies, and perspectives to push the boundaries
-              of innovation and bring meaningful change through code. I
-              currently hold a B.S. in Computer Science and Information
-              Security, experienced in Full-Stack Web and Mobile Development,
-              and proficient with AWS, React, Postgres, CI/CD, microservices,
-              and Git, all within Agile frameworks for project management.
-            </motion.p>
-          </div>
+          <motion.p
+            className="text-sm sm:text-base text-foreground/60 leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            I build production systems that solve real operational problems, from digital provenance pipelines at a civic insight company to gene-editing automation in a biotech lab. Tools that remove friction, improve the user experience, and make day-to-day processes simpler. My work spans cloud-native backend development, full-stack engineering, and workflow automation. Hands-on experience includes AWS (S3, DynamoDB, MediaConvert, EC2, CloudFormation), React, .NET, GraphQL, and RDBMS. I am drawn to environments like enterprise SaaS, biotech, fintech, and developer tooling, where software has direct, measurable impact.
+          </motion.p>
+
+          <motion.p
+            className="mt-6 text-sm sm:text-base text-foreground/90"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+          >
+            Got a workflow that is worth improving, or a team building something that matters?{" "}
+            I am always up for collaborating with experts and companies who want to turn real-world friction into software that works.
+          </motion.p>
         </motion.div>
 
         <motion.div
@@ -209,7 +198,6 @@ export default function AboutMe() {
         >
           <motion.div
             className="flex-1 p-4 sm:p-6 rounded-lg bg-[var(--box-background)] text-[var(--box-foreground)] relative overflow-hidden"
-            {...(prefersReducedMotion ? {} : { whileHover: { scale: 1.02 }, transition: { type: "spring", stiffness: 300 } })}
           >
             <ShineEffect isVisible={shineStates[0]} />
             <h3 className="text-lg sm:text-xl font-bold mb-3 text-center">
@@ -217,20 +205,19 @@ export default function AboutMe() {
             </h3>
             <ul className="list-none font-light text-center space-y-2">
               <li className="text-sm sm:text-base text-foreground/70">
-                Automated 60% of gene editing workflow for stem cell research
+                Automated 60% of stem cell research gene editing workflows
               </li>
               <li className="text-sm sm:text-base text-foreground/70">
-                Built a system for civicwire insights reducing misinformation by 50%
+                Engineered CivicWire insights system supporting global 10+ editorial teams
               </li>
               <li className="text-sm sm:text-base text-foreground/70">
-                Built multi-role health diagnostics portal with end-to-end test kit management
+                Built Health Diagnostics multi-role portal with end-to-end test kit management
               </li>
             </ul>
           </motion.div>
 
           <motion.div
             className="flex-1 p-4 sm:p-6 rounded-lg bg-[var(--box-background)] text-[var(--box-foreground)] relative overflow-hidden"
-            {...(prefersReducedMotion ? {} : { whileHover: { scale: 1.02 }, transition: { type: "spring", stiffness: 300 } })}
           >
             <ShineEffect isVisible={shineStates[1]} />
             <h3 className="text-lg text-center sm:text-xl font-semibold mb-3">
@@ -254,7 +241,6 @@ export default function AboutMe() {
 
           <motion.div
             className="flex-1 p-4 sm:p-6 rounded-lg bg-[var(--box-background)] text-[var(--box-foreground)] relative overflow-hidden"
-            {...(prefersReducedMotion ? {} : { whileHover: { scale: 1.02 }, transition: { type: "spring", stiffness: 300 } })}
           >
             <ShineEffect isVisible={shineStates[2]} />
             <h3 className="text-lg text-center sm:text-xl font-semibold mb-3">

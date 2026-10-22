@@ -91,7 +91,7 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 bg-foreground/10 hover:bg-foreground/20 rounded-lg transition-colors"
+                        className="p-2 bg-foreground/10 hover:bg-foreground/20 hover:text-[var(--accent)] rounded-lg transition-colors"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -108,7 +108,7 @@ export default function Projects() {
                         href={project.external}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 flex items-center justify-center bg-foreground/10 hover:bg-foreground/20 rounded-lg transition-colors"
+                        className="p-2 flex items-center justify-center bg-foreground/10 hover:bg-foreground/20 hover:text-[var(--accent)] rounded-lg transition-colors"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         initial={{ opacity: 0, scale: 0.8 }}
