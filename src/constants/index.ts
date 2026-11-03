@@ -139,7 +139,7 @@ export const EXPERIENCE_DATA = [
   },
   {
     company: "The New York Stem Cell Foundation",
-    role: "Software Engineer Intern",
+    role: "Software Engineer",
     duration: "June 2025 - August 2025",
     responsibilities: [
       "Optimized gene editing inputs and automated 60% of scientists' workflows to streamline lab operations by developing and implementing laboratory web features using React, Redux, and C#, allowing scientists to customize experiment settings on automated liquid handling robots.",
